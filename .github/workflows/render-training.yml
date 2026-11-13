@@ -1,9 +1,24 @@
 name: Render training videos
 
-# Renders the NEWL AFRICA training lessons with Remotion on GitHub-hosted runners.
-# Trigger: Actions tab → "Render training videos" → Run workflow
-#   or:    gh workflow run render-training.yml -f lessons=all -f publish=true
+# Simple flow:
+#   • Push to main (any change to the video sources)  → all six lessons render,
+#     get published to the "training-videos" release, and the learning centre redeploys.
+#   • Or: Actions tab → "Render training videos" → Run workflow (defaults = render all + publish).
+#
+# Narration, subtitles and timing are generated locally and committed, so CI only renders.
 on:
+  push:
+    branches: [main]
+    paths:
+      - src/**
+      - public/**
+      - scripts/narration/**
+      - scripts/production/render.mjs
+      - scripts/production/export.mjs
+      - remotion.config.ts
+      - package.json
+      - package-lock.json
+      - .github/workflows/render-training.yml
   workflow_dispatch:
     inputs:
       lessons:
@@ -11,16 +26,8 @@ on:
         type: choice
         default: all
         options: [all, lesson-01, lesson-02, lesson-03, lesson-04, lesson-05, lesson-06]
-      regenerate_narration:
-        description: Re-synthesise narration before rendering (only needed after script edits that weren't regenerated locally)
-        type: boolean
-        default: false
       preview:
-        description: Fast half-resolution preview (not for publishing)
-        type: boolean
-        default: false
-      publish:
-        description: Publish to the "training-videos" release and redeploy the learning centre
+        description: Quick half-resolution test render (not published)
         type: boolean
         default: false
 
@@ -29,89 +36,74 @@ permissions:
   pages: write      # redeploy the learning centre
   id-token: write
 
+# A newer push replaces an in-progress render.
 concurrency:
   group: render-training
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
-  prepare:
-    name: Prepare narration, subtitles and checks
+  setup:
     runs-on: ubuntu-latest
     outputs:
-      matrix: ${{ steps.matrix.outputs.matrix }}
+      matrix: ${{ steps.m.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: { node-version: 22, cache: npm }
-      - uses: actions/setup-python@v5
-        with: { python-version: "3.12" }
-      - run: npm ci
-      - run: pip install -r scripts/production/requirements.txt
-      - name: Regenerate narration (edge-tts)
-        if: inputs.regenerate_narration
-        run: npm run narration
-      - name: Export timeline, subtitles and site data
-        run: npm run export
-      - name: Production checks (assets, subtitles, no credentials)
-        run: npm run verify
-      - name: Type-check
-        run: npm run lint
-      - id: matrix
+      - id: m
+        env:
+          PICK: ${{ inputs.lessons || 'all' }}
         run: |
-          if [ "${{ inputs.lessons }}" = "all" ]; then
+          if [ "$PICK" = "all" ]; then
             echo 'matrix=["lesson-01","lesson-02","lesson-03","lesson-04","lesson-05","lesson-06"]' >> "$GITHUB_OUTPUT"
           else
-            echo 'matrix=["${{ inputs.lessons }}"]' >> "$GITHUB_OUTPUT"
+            echo "matrix=[\"$PICK\"]" >> "$GITHUB_OUTPUT"
           fi
-      - uses: actions/upload-artifact@v4
-        with:
-          name: prepared
-          retention-days: 3
-          path: |
-            src/generated/
-            public/audio/narration/
-            data/
-            subtitles/
-            resources/
 
   render:
     name: Render ${{ matrix.lesson }}
-    needs: prepare
+    needs: setup
     runs-on: ubuntu-latest
-    timeout-minutes: 330
+    timeout-minutes: 350
     strategy:
       fail-fast: false
       matrix:
-        lesson: ${{ fromJson(needs.prepare.outputs.matrix) }}
+        lesson: ${{ fromJson(needs.setup.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with: { node-version: 22, cache: npm }
-      - run: npm ci
-      - uses: actions/download-artifact@v4
-        with: { name: prepared, path: . }
-      - name: Install Chromium system libraries
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Chromium libraries and ffmpeg
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends libnss3 libdbus-1-3 libatk1.0-0 libgbm-dev libasound2t64 \
-            libxrandr2 libxkbcommon-dev libxfixes3 libxcomposite1 libxdamage1 libatk-bridge2.0-0 libpango-1.0-0 libcairo2 libcups2
-          # full ffmpeg build: Remotion's bundled one cannot embed the subtitle track
-          sudo apt-get install -y --no-install-recommends ffmpeg
+          sudo apt-get install -y --no-install-recommends ffmpeg libnss3 libdbus-1-3 libatk1.0-0 libgbm-dev \
+            libasound2t64 libxrandr2 libxkbcommon-dev libxfixes3 libxcomposite1 libxdamage1 libatk-bridge2.0-0 \
+            libpango-1.0-0 libcairo2 libcups2
           npx remotion browser ensure
-      - name: Render, mux subtitles, validate
+
+      - name: Export subtitles/data and check assets
+        run: |
+          npm run export
+          npm run verify
+
+      - name: Render
         run: |
           EXTRA=""
           if [ "${{ inputs.preview }}" = "true" ]; then EXTRA="--scale=0.5 --crf=26"; fi
           node scripts/production/render.mjs --lessons=${{ matrix.lesson }} $EXTRA
-      - name: Stage files for upload
+
+      - name: Collect files
         run: |
-          n=$(echo "${{ matrix.lesson }}" | sed 's/lesson-//')
+          id="${{ matrix.lesson }}"; n="${id#lesson-}"
           mkdir -p upload
-          cp "videos/${{ matrix.lesson }}/newl-africa-lesson-$n.mp4" upload/
-          cp "videos/${{ matrix.lesson }}/poster.jpg" "upload/newl-africa-lesson-$n-poster.jpg"
-          cp "subtitles/${{ matrix.lesson }}.en.srt" "subtitles/${{ matrix.lesson }}.en.vtt" upload/
-          cp videos/manifest.json "upload/manifest-${{ matrix.lesson }}.json"
+          cp "videos/$id/newl-africa-lesson-$n.mp4" upload/
+          cp "videos/$id/poster.jpg" "upload/newl-africa-lesson-$n-poster.jpg"
+          cp "subtitles/$id.en.srt" "subtitles/$id.en.vtt" upload/
+          cp videos/manifest.json "upload/manifest-$id.json"
           ls -la upload
+
       - uses: actions/upload-artifact@v4
         with:
           name: video-${{ matrix.lesson }}
@@ -119,10 +111,11 @@ jobs:
           retention-days: 14
           compression-level: 0
 
+  # Publishes every lesson that rendered successfully, even if another lesson failed.
   publish:
     name: Publish to release
     needs: render
-    if: inputs.publish && !inputs.preview
+    if: ${{ !cancelled() && inputs.preview != true }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -132,13 +125,15 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          if [ -z "$(ls -A release 2>/dev/null)" ]; then echo "::error::No lesson rendered successfully — nothing to publish."; exit 1; fi
           gh release view training-videos >/dev/null 2>&1 || \
             gh release create training-videos --title "NEWL AFRICA training videos" \
-              --notes "Rendered lessons of the NEWL AFRICA Digital System Training. Updated by the Render training videos workflow."
+              --notes "Rendered lessons of the NEWL AFRICA Digital System Training. Updated automatically by the Render training videos workflow."
           gh release upload training-videos release/* --clobber
           gh release view training-videos --json assets --jq '.assets[] | "\(.name)\t\(.size)"'
 
   deploy:
     name: Redeploy learning centre
     needs: publish
+    if: ${{ !cancelled() && needs.publish.result == 'success' }}
     uses: ./.github/workflows/deploy-learning-centre.yml

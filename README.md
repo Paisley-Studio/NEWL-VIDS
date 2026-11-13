@@ -99,17 +99,14 @@ Local rendering uses the GPU (`RENDER_GL=angle`) on Windows/macOS: ~13 fps, roug
 
 ## Rendering with GitHub Actions
 
-1. Push this repository to GitHub (the redacted screenshots, narration, music and subtitles are committed; rendered videos and original screenshots are not).
-2. **Settings → Pages → Source: GitHub Actions** (one-time).
-3. **Actions → Render training videos → Run workflow**:
-   - `lessons`: `all` or a single lesson
-   - `regenerate_narration`: only if scripts changed and narration wasn't regenerated locally
-   - `preview`: half resolution for a quick check
-   - `publish`: upload to the `training-videos` release and redeploy the learning centre
+One-time: **Settings → Pages → Source: GitHub Actions**.
 
-   CLI equivalent: `gh workflow run render-training.yml -f lessons=all -f publish=true`
+Then it is just:
 
-What happens: a **prepare** job exports subtitles/data and runs `verify` and the type-check; six **render** jobs run in parallel (one per lesson, ~1–2.5 h each on standard runners, software rendering); each validates its MP4 (video, audio and subtitle streams present, duration equal to the timeline, plausible size) and **fails the run** otherwise. Outputs are uploaded as artifacts `video-lesson-0N` (kept 14 days).
+- **Push to `main`** — any change to `src/`, `public/`, `scripts/narration/`, the renderer or `package*.json` renders all six lessons, publishes them to the `training-videos` release and redeploys the learning centre automatically.
+- **Or run it by hand** — **Actions → Render training videos → Run workflow** (defaults: all lessons, published). Pick a single lesson, or tick `preview` for a fast half-resolution test that is not published.
+
+Narration, timing and subtitles are generated locally (`npm run narration`, `npm run export`) and committed, so CI only renders. Six **render** jobs run in parallel (one per lesson, ~1–2.5 h each on standard runners); each validates its MP4 (video, audio and subtitle streams, duration, size). Every lesson that rendered successfully is published even if another one failed. Outputs are also kept as artifacts `video-lesson-0N` (14 days). A newer push cancels a render still in progress.
 
 The learning centre also redeploys automatically on any push that changes `index.html`, `assets/`, `data/`, `subtitles/` or `resources/` (**Deploy learning centre** workflow).
 
