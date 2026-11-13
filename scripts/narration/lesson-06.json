@@ -1,0 +1,220 @@
+{
+  "id": "lesson-06",
+  "number": 6,
+  "title": "System Administration, Oversight and Best Practices",
+  "shortTitle": "Administration and Best Practices",
+  "theme": "Managing the platform responsibly and understanding its underlying architecture.",
+  "accent": "#d63a6a",
+  "audience": ["Administrators", "Board members", "Project owners", "Team leaders"],
+  "description": "The administrator's responsibilities, user access, profile and settings, how the platform is built on Firebase, Firestore, Cloudflare and Mobilesasa, and the habits that keep records reliable.",
+  "objectives": [
+    "Describe the administrator's responsibilities",
+    "Manage user access responsibly",
+    "Explain the platform's architecture in plain terms",
+    "Understand what security depends on",
+    "Apply best practices for reliable records and effective oversight"
+  ],
+  "scenes": [
+    {
+      "id": "opening",
+      "kind": "opening",
+      "chapter": "Welcome",
+      "topics": ["Administrator responsibilities", "Profile and settings", "How the platform is built", "Best practices and oversight"],
+      "beats": [
+        { "text": "Lesson six: system administration, oversight and best practices." },
+        { "text": "In this final lesson, we'll look at the administrator's responsibilities, how the platform is built, and the habits that keep its records reliable." }
+      ]
+    },
+    {
+      "id": "duties",
+      "kind": "diagram",
+      "diagram": "cards",
+      "chapter": "The administrator's responsibilities",
+      "data": {
+        "title": "What administrators are responsible for",
+        "columns": 3,
+        "items": [
+          { "icon": "folder-plus", "title": "Accurate setup", "body": "Projects with correct references and budgets." },
+          { "icon": "user-gear", "title": "People and access", "body": "Team leaders, their credentials and assignments." },
+          { "icon": "receipt", "title": "Expenditure", "body": "Recorded with clear descriptions and references." },
+          { "icon": "gavel", "title": "Timely decisions", "body": "Fund requests and completions, with documented reasons." },
+          { "icon": "gear", "title": "Settings and review", "body": "SMS configuration and regular audit-log review." },
+          { "icon": "building-columns", "title": "Reporting upward", "body": "Keeping the Board and project owners informed." }
+        ]
+      },
+      "beats": [
+        { "text": "Administrators carry a special responsibility, because they control the platform's structure and its financial decisions.", "show": 0 },
+        { "text": "They set up projects accurately, with correct references and budgets, and they manage team leaders, their credentials, and their project assignments.", "show": 2, "focus": 1 },
+        { "text": "They record expenditure with proper descriptions and references, and they review fund requests and completed projects promptly, documenting the reasons for their decisions.", "show": 4, "focus": 3 },
+        { "text": "And they maintain the system's settings, review the audit log, and keep the Board and project owners informed.", "show": 6, "focus": 5 }
+      ]
+    },
+    {
+      "id": "access",
+      "kind": "diagram",
+      "diagram": "compare",
+      "chapter": "User access",
+      "data": {
+        "title": "Access follows the two sign-in roles",
+        "left": { "icon": "user-shield", "title": "Administrator", "tag": "Every area", "points": ["Home, Projects, Team Leaders", "Financials and All Casuals", "Daily Logs and Notifications", "Audit Log and SMS settings"] },
+        "right": { "icon": "user-tie", "title": "Team Leader", "tag": "Their own work", "points": ["My Projects and My Casuals", "Their Daily Logs", "Their Fund Requests", "Their Notifications and Settings"] },
+        "footer": "One person, one account — never shared"
+      },
+      "beats": [
+        { "text": "Access is based on the two sign-in roles.", "show": 0 },
+        { "text": "Administrators see every area of the platform.", "show": 1, "focus": 0 },
+        { "text": "Team leaders see only their own projects, their casual workers, their logs, their fund requests and their notifications.", "show": 2, "focus": 1 },
+        { "text": "Every person should have their own account. Accounts should never be shared, because the audit log identifies people by the account they signed in with.", "show": 3 },
+        { "text": "When a team leader leaves the organisation, remove them from their projects, delete their profile, and ask your technical administrator to remove their sign-in account from Firebase, so that it can no longer be used.", "show": 3, "callout": { "icon": "user-xmark", "title": "When someone leaves", "body": "Unassign projects · remove the profile · remove the Firebase sign-in account.", "pos": "bottom" } }
+      ]
+    },
+    {
+      "id": "settings",
+      "kind": "screen",
+      "chapter": "Profile and settings",
+      "image": "16-settings-profile-sms",
+      "beats": [
+        { "text": "The Settings page begins with My Profile, showing your name, username, phone number and role. We've hidden the phone number here.", "cam": [350, 110, 1140, 500], "hl": [{ "box": [374, 212, 1121, 473], "label": "My Profile" }], "cursor": { "to": [183, 654], "click": true } },
+        { "text": "Next to it, the Firebase panel shows the platform's project name, your unique account identifier, and whether the connection to the database is active. Treat your account identifier as private.", "cam": [1120, 110, 1908, 500], "hl": [{ "box": [1142, 212, 1889, 473], "label": "Firebase" }, { "box": [1160, 395, 1870, 440], "label": "Connected" }] },
+        { "text": "Team leaders see the same profile and connection panels. The SMS configuration is visible to administrators only.", "cam": "full" }
+      ]
+    },
+    {
+      "id": "architecture",
+      "kind": "diagram",
+      "diagram": "architecture",
+      "chapter": "How the platform is built",
+      "data": { "title": "How the platform is built" },
+      "beats": [
+        { "text": "Let's look, in simple terms, at how the platform is built.", "show": 0 },
+        { "text": "The application runs in a web browser, on a computer or a phone. There's nothing to install.", "show": 1 },
+        { "text": "When someone signs in, their identity is checked by Firebase Authentication: Google's secure sign-in service.", "show": 2, "sfx": ["login"] },
+        { "text": "The platform's information is stored in Firestore, a cloud database also provided by Google.", "show": 3, "sfx": ["data"] },
+        { "text": "Firestore holds seven main collections: users, projects, casuals, daily logs, budgets, notifications, and the audit log.", "show": 4 },
+        { "text": "For SMS, the application sends each message to a Cloudflare Worker, which forwards it to Mobilesasa for delivery to mobile phones. The application never contacts Mobilesasa directly; it always goes through the Worker.", "show": 5, "sfx": ["sms"] }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "diagram",
+      "diagram": "cards",
+      "chapter": "The main data areas",
+      "data": {
+        "title": "Firestore collections",
+        "columns": 4,
+        "items": [
+          { "icon": "users", "title": "users", "body": "Administrator and team leader profiles and roles" },
+          { "icon": "folder", "title": "projects", "body": "Project details, status and team leader assignment" },
+          { "icon": "helmet-safety", "title": "casuals", "body": "Casual worker records, linked to projects" },
+          { "icon": "clipboard-list", "title": "daily_logs", "body": "Field reports submitted by team leaders" },
+          { "icon": "wallet", "title": "budgets", "body": "Expenditure and additional fund requests per project" },
+          { "icon": "bell", "title": "notifications", "body": "In-app alerts addressed to each person" },
+          { "icon": "clock-rotate-left", "title": "audit", "body": "The history of actions: who, what, when" }
+        ]
+      },
+      "beats": [
+        { "text": "Each collection has a clear purpose. Users holds administrator and team leader profiles. Projects holds project details and assignments. And casuals holds worker records, linked to their projects.", "show": 3 },
+        { "text": "Daily logs holds field reports. Budgets holds each project's expenditure and additional fund requests. Notifications holds in-app alerts, and audit holds the history of actions.", "show": 7 }
+      ]
+    },
+    {
+      "id": "security",
+      "kind": "diagram",
+      "diagram": "cards",
+      "chapter": "Security and configuration",
+      "data": {
+        "title": "What the platform's security depends on",
+        "subtitle": "Controls reduce risk — no system is completely immune to attack",
+        "columns": 4,
+        "items": [
+          { "icon": "id-card", "title": "Authentication", "body": "Correctly configured Firebase sign-in, so only registered users get in." },
+          { "icon": "shield-halved", "title": "Firestore rules", "body": "Decide who can read or change each record — not just what screens display." },
+          { "icon": "check-double", "title": "Validation", "body": "Careful checking of the information that is entered." },
+          { "icon": "user-lock", "title": "User habits", "body": "Private passwords, personal accounts, signing out." }
+        ],
+        "footer": { "icon": "key", "text": "Never share passwords, configuration values or keys in messages, screenshots or documents" }
+      },
+      "beats": [
+        { "text": "Security is a shared responsibility. The platform's protection depends on several things working together.", "show": 0 },
+        { "text": "Correctly configured Firebase Authentication, so that only registered users can sign in.", "show": 1, "focus": 0 },
+        { "text": "Firestore security rules, which decide who can read or change each type of record — not just what the screens choose to display.", "show": 2, "focus": 1 },
+        { "text": "Careful validation of the information entered, and good habits from every user.", "show": 4, "focus": 3 },
+        { "text": "No system is completely immune to attack. These controls reduce risk; they don't eliminate it. So the technical team should review the Firestore rules and the Worker's configuration regularly.", "show": 4 },
+        { "text": "And passwords, configuration values and keys must never be shared in messages, screenshots or documents.", "show": 4, "footer": true }
+      ]
+    },
+    {
+      "id": "practices",
+      "kind": "diagram",
+      "diagram": "checklist",
+      "chapter": "Best practices",
+      "data": {
+        "title": "Best practices for reliable records",
+        "items": [
+          { "icon": "keyboard", "title": "Enter data accurately the first time", "body": "Check project references, budgets and phone numbers before saving." },
+          { "icon": "calendar-check", "title": "Report daily and honestly", "body": "A short, accurate log on the day beats a detailed one written from memory." },
+          { "icon": "receipt", "title": "Describe expenses consistently", "body": "Clear item descriptions, always with a receipt or reference." },
+          { "icon": "comment-dots", "title": "Give clear reasons", "body": "For every fund request, and for every decision." },
+          { "icon": "user-lock", "title": "Protect access", "body": "Personal accounts, sign out on shared devices, remove access promptly." }
+        ]
+      },
+      "beats": [
+        { "text": "Let's bring it together, with best practices for reliable records.", "show": 0 },
+        { "text": "Enter data accurately the first time. Check project references, budgets and phone numbers before saving.", "show": 1, "focus": 0 },
+        { "text": "Report daily and honestly. A short, accurate log submitted on the day is worth far more than a detailed one written from memory a week later.", "show": 2, "focus": 1 },
+        { "text": "Describe expenses consistently, and always include a receipt or reference.", "show": 3, "focus": 2 },
+        { "text": "Give clear reasons for every fund request, and for every decision.", "show": 4, "focus": 3 },
+        { "text": "And protect access: keep accounts personal, sign out on shared devices, and remove access promptly when someone leaves.", "show": 5, "focus": 4 }
+      ]
+    },
+    {
+      "id": "board",
+      "kind": "diagram",
+      "diagram": "cards",
+      "chapter": "What the Board should look for",
+      "data": {
+        "title": "Questions for effective oversight",
+        "columns": 4,
+        "items": [
+          { "icon": "clipboard-list", "title": "Activity", "body": "Are projects reporting regularly, or have their logs gone quiet?" },
+          { "icon": "chart-pie", "title": "Budget use", "body": "How much of each budget is used, and how much remains?" },
+          { "icon": "hand-holding-dollar", "title": "Fund requests", "body": "How often, for what reasons, and how were they decided?" },
+          { "icon": "clock-rotate-left", "title": "Audit trail", "body": "Are the expected people taking the expected actions?" }
+        ],
+        "footer": { "icon": "user-shield", "text": "Administrators can walk the Board through the dashboard, financials and audit log" }
+      },
+      "beats": [
+        { "text": "For Board members and project owners, the platform offers a dependable basis for oversight, provided you ask the right questions.", "show": 0 },
+        { "text": "Are projects active and reporting regularly, or have their daily logs gone quiet?", "show": 1, "focus": 0 },
+        { "text": "How much of each budget has been used, and how much remains?", "show": 2, "focus": 1 },
+        { "text": "How often are additional funds requested, for what reasons, and how were those requests decided?", "show": 3, "focus": 2 },
+        { "text": "And does the audit trail show the expected people taking the expected actions?", "show": 4, "focus": 3 },
+        { "text": "Administrators can walk the Board through the dashboard, the financial overview and the audit log, to answer each of these questions.", "show": 4, "footer": true }
+      ]
+    },
+    {
+      "id": "closing",
+      "kind": "closing",
+      "chapter": "Summary",
+      "takeaways": [
+        "Projects created, assigned and monitored",
+        "Field activity reported daily and accurately",
+        "Funds allocated, requested and decided transparently",
+        "Everyone informed, every action accountable"
+      ],
+      "next": "You have completed the NEWL AFRICA Digital System Training",
+      "beats": [
+        { "text": "This brings the NEWL AFRICA Digital System Training programme to a close.", "show": 0 },
+        { "text": "You've seen how projects are created and assigned, how field activity is reported, how money is allocated, requested and approved, and how notifications and the audit log keep everyone informed and accountable.", "show": 4 },
+        { "text": "The platform is a powerful tool, but its value depends on the people who use it. Use it responsibly, keep it accurate, and keep it transparent.", "show": 4 },
+        { "text": "Thank you for completing this training.", "show": 4, "next": true }
+      ]
+    },
+    {
+      "id": "credits",
+      "kind": "credits",
+      "chapter": "Credits",
+      "beats": [{ "text": "This training experience was produced by KEYPOLE TECHNOLOGIES." }]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Screen sequence · NEWL AFRICA Training</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/learning-centre.css">
+<link rel="stylesheet" href="../assets/css/document.css">
+</head>
+<body>
+<header class="topnav"><div class="wrap topnav-inner">
+  <a class="brand" href="../index.html"><span class="mark"><i class="fas fa-tower-cell"></i></span><span><b>NEWL AFRICA</b><small>DIGITAL SYSTEM TRAINING CENTRE</small></span></a>
+  <nav class="links"><a href="../index.html#lessons">Lessons</a><a href="../index.html#resources">Resources</a></nav>
+</div></header>
+<main class="wrap doc">
+<a class="back" href="../index.html#resources"><i class="fas fa-arrow-left"></i> Back to the training centre</a>
+<article>
+<h1>Screen sequence</h1>
+<p>The supplied archive contained 26 captures of the live application, several of them different stages of the same workflow. They were inspected individually and arranged into the order a user actually meets them, rather than archive or alphabetical order. The source of truth is <code>scripts/production/screenshots.json</code>; <code>scripts/production/sanitize_screenshots.py</code> produces the published copies in <code>public/screenshots/</code>.</p>
+<p><strong>Redaction.</strong> Five captures contained personal or sensitive data (sign-in usernames, team-leader passwords, phone numbers, e-mail addresses, a Firebase Auth UID and the SMS Worker URL). These regions are pixelated and blurred in the published copies. The original captures are kept locally in <code>Images/</code> and are excluded from Git.</p>
+<p><strong>Alignment.</strong> Before/after captures of the same screen were aligned to the pixel (<code>shift</code> in the inventory) so that the training can cross-fade between them, for example the Financials page before and after a fund request is approved.</p>
+<h2>Logical journey</h2>
+<div class="table"><table><thead><tr><th>#</th><th>Published file</th><th>Original capture</th><th>Screen</th><th>Used in</th></tr></thead><tbody><tr><td>1</td><td>01-admin-login</td><td>232520</td><td>Login — Admin tab (username redacted)</td><td>L01</td></tr><tr><td>2</td><td>02-admin-dashboard</td><td>232712</td><td>Administrator dashboard</td><td>L01, L02, L05</td></tr><tr><td>3</td><td>03-new-project-form-top</td><td>232937</td><td>New Project — upper fields</td><td>L02</td></tr><tr><td>4</td><td>04-new-project-form-bottom</td><td>233024</td><td>New Project — team leader, description, status</td><td>L02</td></tr><tr><td>5</td><td>05-new-team-leader-form</td><td>233046</td><td>New Team Leader</td><td>L02</td></tr><tr><td>6</td><td>06-projects-list</td><td>233331</td><td>Projects portfolio</td><td>L02</td></tr><tr><td>7</td><td>07-projects-search</td><td>233144</td><td>Projects — global search “KIS”</td><td>L02</td></tr><tr><td>8</td><td>08-team-leaders</td><td>233345</td><td>Team Leaders (credentials, phones, e-mails redacted)</td><td>L02</td></tr><tr><td>9</td><td>09-financials-overview</td><td>233418</td><td>Financials — before any request</td><td>L04</td></tr><tr><td>10</td><td>10-financials-charts</td><td>233431</td><td>Financial analytics</td><td>L04</td></tr><tr><td>11</td><td>11-financials-breakdown</td><td>233446</td><td>Per-project breakdown (14% used)</td><td>L04</td></tr><tr><td>12</td><td>12-daily-logs-admin</td><td>233456</td><td>Daily Logs — administrator (empty)</td><td>reference</td></tr><tr><td>13</td><td>13-all-casuals-admin</td><td>233819</td><td>All Casuals — administrator</td><td>L03</td></tr><tr><td>14</td><td>14-notifications</td><td>233832</td><td>Notification centre</td><td>L05</td></tr><tr><td>15</td><td>15-audit-log</td><td>233913</td><td>Audit Log</td><td>L05</td></tr><tr><td>16</td><td>16-settings-profile-sms</td><td>233926</td><td>Settings — profile, Firebase, SMS (phone, UID, Worker URL redacted)</td><td>L05, L06</td></tr><tr><td>17</td><td>17-settings-sms-events</td><td>233943</td><td>SMS auto-fire per event</td><td>L05</td></tr><tr><td>18</td><td>18-team-leader-login</td><td>234750</td><td>Login — Team Leader tab (username redacted)</td><td>L01, L03</td></tr><tr><td>19</td><td>19-team-leader-home</td><td>234514</td><td>Team leader workspace</td><td>L01, L03, L04</td></tr><tr><td>20</td><td>20-add-casual-form</td><td>234533</td><td>Add Casual</td><td>L03</td></tr><tr><td>21</td><td>21-fund-request-form-empty</td><td>234557</td><td>Request Additional Funds — empty</td><td>L04</td></tr><tr><td>22</td><td>22-fund-request-form-filled</td><td>234624</td><td>Request Additional Funds — completed</td><td>L04</td></tr><tr><td>23</td><td>23-admin-dashboard-attention</td><td>234851</td><td>Dashboard — “Needs your attention”</td><td>L01, L02, L04</td></tr><tr><td>24</td><td>24-financials-pending-request</td><td>235139</td><td>Financials — pending request with Approve / Decline</td><td>L04</td></tr><tr><td>25</td><td>25-financials-after-approval</td><td>235224</td><td>Financials — after approval</td><td>L04</td></tr><tr><td>26</td><td>26-financials-charts-after-approval</td><td>235301</td><td>Charts — after approval</td><td>L04</td></tr><tr><td>27</td><td>27-financials-breakdown-after-approval</td><td>235313</td><td>Breakdown — after approval (24% used)</td><td>L04</td></tr></tbody></table></div>
+<p>Original capture names are <code>Screenshot 2026-11-12 HHMMSS.png</code>.</p>
+<h2>Views without a supplied screenshot</h2>
+<p>The following views are needed to teach the workflows but were not in the archive. They are rendered in the videos from the application's own markup and CSS (transcribed from <code>renderProjectDetail</code>, <code>openDailyLogModal</code>, <code>openExpenseModal</code>, <code>openCompleteProjectModal</code> and <code>renderLogs</code>), at the same 1.35× zoom as the captures, and are labelled on screen “Interface rendered from the application's source · illustrative data”:</p>
+<ul><li>Project detail page (administrator and team leader variants; Overview, Casuals, Logs and Financials tabs)</li><li>Submit Daily Log form</li><li>Add Expenditure form</li><li>Mark Project Complete form</li><li>Team leader Daily Logs page after submission</li></ul>
+<p>Illustrative values are consistent with the captures (project KISUMU_NITA, SMP-WO-1851398, team leader Tesh, budget KES 500,000, Mast Mounting KES 70,000). The example worker “John Otieno” and phone number +254712345678 are the application's own form placeholders.</p>
+</article>
+</main>
+<footer class="footer"><div class="wrap footer-inner">
+  <div class="footer-newl"><span class="mark"><i class="fas fa-tower-cell"></i></span><div><b>NEWL AFRICA</b><small>Digital System Training Centre</small></div></div>
+  <div class="footer-credit"><img src="../public/branding/keypole-technologies-logo.png" alt="KEYPOLE TECHNOLOGIES" width="240" height="160"><p>Training Experience Designed &amp; Developed by <b>KEYPOLE TECHNOLOGIES</b>.</p></div>
+</div></footer>
+</body>
+</html>

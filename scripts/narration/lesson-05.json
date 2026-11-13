@@ -1,0 +1,189 @@
+{
+  "id": "lesson-05",
+  "number": 5,
+  "title": "Notifications, Communication and Accountability",
+  "shortTitle": "Notifications and Accountability",
+  "theme": "Keeping the organisation informed and maintaining an accountability trail.",
+  "accent": "#8a5fd6",
+  "audience": ["Administrators", "Team leaders", "Board members"],
+  "description": "How in-app notifications and SMS messages keep people informed, which events trigger them, what the SMS settings actually control, and how the audit log maintains a lasting record of actions.",
+  "objectives": [
+    "Use the notification centre",
+    "Identify which events notify whom, and through which channel",
+    "Explain how an SMS travels from the platform to a phone",
+    "Configure SMS settings, dry-run mode and per-event switches",
+    "Distinguish a notification from an audit record"
+  ],
+  "scenes": [
+    {
+      "id": "opening",
+      "kind": "opening",
+      "chapter": "Welcome",
+      "topics": ["The notification centre", "SMS messaging", "SMS settings", "The audit log"],
+      "beats": [
+        { "text": "Lesson five: notifications, communication and accountability." },
+        { "text": "In this lesson, we'll see how the platform keeps people informed, how SMS messages are sent, and how the audit log keeps a lasting trail of actions." }
+      ]
+    },
+    {
+      "id": "channels",
+      "kind": "diagram",
+      "diagram": "compare",
+      "chapter": "Two ways to keep people informed",
+      "data": {
+        "title": "Two communication channels",
+        "left": { "icon": "bell", "title": "In-app notifications", "tag": "Inside the platform", "points": ["Appear in the notification centre", "Addressed to one specific person", "Stored in the database until read", "Open straight to the related project"] },
+        "right": { "icon": "comment-sms", "title": "SMS messages", "tag": "To mobile phones", "points": ["Reach people who aren't signed in", "Sent through Cloudflare and Mobilesasa", "Each automatic type can be switched on or off", "Require a valid phone number on record"] },
+        "footer": "Some events use both channels — some use SMS only"
+      },
+      "beats": [
+        { "text": "The platform communicates in two ways.", "show": 0 },
+        { "text": "In-app notifications appear inside the platform, in the notification centre. Each one is addressed to a specific person, and it's stored in the database until it's read.", "show": 1, "focus": 0, "sfx": ["chime"] },
+        { "text": "SMS messages are sent to mobile phones, so people are informed even when they aren't signed in.", "show": 2, "focus": 1, "sfx": ["sms"] },
+        { "text": "Some events use both channels, and some use SMS only. Let's look at each.", "show": 3 }
+      ]
+    },
+    {
+      "id": "centre",
+      "kind": "screen",
+      "chapter": "The notification centre",
+      "image": "14-notifications",
+      "beats": [
+        { "text": "Open Notifications from the sidebar, or select the bell icon at the top of any page. When you have unread notifications, the bell shows a count.", "cam": "full", "hl": [{ "box": [39, 498, 328, 557], "label": "Notifications" }, { "box": [1816, 31, 1872, 90], "label": "Bell" }] },
+        { "text": "Each notification has a title, a short message, and when it arrived. Unread notifications are marked with a green bar along the left edge.", "cam": [350, 120, 1914, 460], "hl": [{ "box": [375, 238, 1889, 334] }] },
+        { "text": "Here, the administrator has received alerts for additional fund requests, and for submitted daily logs.", "cam": [350, 200, 1914, 871], "hl": [{ "box": [375, 238, 1889, 334], "label": "Fund request" }, { "box": [375, 347, 1889, 443], "label": "Daily log" }] },
+        { "text": "Selecting a notification marks it as read and opens the related project. You can also mark all your notifications as read at once.", "cam": [350, 200, 1914, 871], "cursor": { "to": [900, 286], "click": true } }
+      ]
+    },
+    {
+      "id": "events",
+      "kind": "diagram",
+      "diagram": "matrix",
+      "chapter": "Which events notify whom",
+      "data": {
+        "title": "Events that trigger communication",
+        "columns": ["Event", "Who is informed", "In-app", "SMS"],
+        "rows": [
+          { "event": "Team leader created (with sign-in details)", "to": "Team leader", "inapp": false, "sms": true },
+          { "event": "Project assigned", "to": "Team leader", "inapp": false, "sms": true },
+          { "event": "Removed from a project (project edit)", "to": "Previous team leader", "inapp": false, "sms": true },
+          { "event": "Direct message from administrator", "to": "Team leader", "inapp": true, "sms": true },
+          { "event": "Casual worker added", "to": "Worker and administrator", "inapp": false, "sms": true },
+          { "event": "Casual worker removed", "to": "Worker and administrator", "inapp": false, "sms": true },
+          { "event": "Daily log submitted", "to": "Administrator", "inapp": true, "sms": true },
+          { "event": "Additional funds requested", "to": "Administrator", "inapp": true, "sms": true },
+          { "event": "Project marked complete", "to": "Administrator", "inapp": true, "sms": true },
+          { "event": "Funds approved or declined", "to": "Team leader", "inapp": true, "sms": true },
+          { "event": "Project approved or sent back", "to": "Team leader", "inapp": true, "sms": true }
+        ]
+      },
+      "beats": [
+        { "text": "Here's a map of the events that trigger communication.", "show": 0 },
+        { "text": "When a team leader is created, assigned to a project, or removed from one through the project's edit form, they receive an SMS. The welcome message includes their sign-in details.", "show": 3 },
+        { "text": "Direct messages from an administrator arrive both in the app and by SMS.", "show": 4 },
+        { "text": "When a casual worker is added or removed, the worker and the administrator are informed by SMS.", "show": 6 },
+        { "text": "When a team leader submits a daily log, requests funds, or marks a project complete, the administrator receives an in-app notification and an SMS.", "show": 9 },
+        { "text": "And when the administrator approves or declines funds, or approves or returns a project, the team leader is notified both ways.", "show": 11 }
+      ]
+    },
+    {
+      "id": "sms-flow",
+      "kind": "diagram",
+      "diagram": "flow",
+      "chapter": "How SMS messages are delivered",
+      "data": {
+        "title": "How an SMS reaches a phone",
+        "nodes": [
+          { "icon": "bolt", "title": "Event", "body": "An action in the platform triggers a message" },
+          { "icon": "message", "title": "Message prepared", "body": "Short text; number converted to +254 format" },
+          { "icon": "cloud", "title": "Cloudflare Worker", "body": "A small secure web service in between" },
+          { "icon": "tower-broadcast", "title": "Mobilesasa", "body": "The SMS gateway, using the sender ID" },
+          { "icon": "mobile-screen", "title": "Recipient's phone", "body": "Delivered as a text message" }
+        ]
+      },
+      "beats": [
+        { "text": "When an event triggers an SMS, the platform prepares a short message, and converts the phone number to the international Kenyan format.", "show": 2, "focus": 1 },
+        { "text": "It then sends the message to a Cloudflare Worker: a small, secure web service that sits between the platform and the SMS provider.", "show": 3, "focus": 2, "sfx": ["data"] },
+        { "text": "The Worker passes the message to Mobilesasa, the SMS gateway, which delivers it to the recipient's phone using the configured sender ID.", "show": 5, "focus": 4, "sfx": ["sms"] },
+        { "text": "If the phone number is missing or invalid, or the service can't be reached, the message is marked as failed rather than silently ignored.", "show": 5, "callout": { "icon": "triangle-exclamation", "title": "Failures are visible", "body": "Invalid numbers and delivery errors appear as “failed” in the Recent SMS list.", "pos": "bottom" } }
+      ]
+    },
+    {
+      "id": "settings",
+      "kind": "screen",
+      "chapter": "SMS settings",
+      "image": "16-settings-profile-sms",
+      "beats": [
+        { "text": "Administrators configure SMS under Settings. The SMS Notifications panel shows whether the system is in Live mode, or in Dry-run mode.", "cam": [350, 470, 1908, 868], "hl": [{ "box": [392, 515, 860, 557], "label": "SMS Notifications" }, { "box": [1733, 519, 1867, 555], "label": "Live mode" }] },
+        { "text": "The Worker URL is the address of the Cloudflare Worker, and the Sender ID is the name that appears on recipients' phones. These are technical settings. We've hidden the address here, and they should only be changed on the advice of your technical team.", "cam": [350, 470, 1908, 868], "hl": [{ "box": [401, 570, 1122, 660], "label": "Worker URL" }, { "box": [1140, 570, 1862, 660], "label": "Sender ID" }] },
+        { "text": "Dry-run mode is a safe testing switch. When it's on, messages are recorded in the platform's SMS list, but they're not actually sent.", "cam": [350, 470, 1908, 868], "hl": [{ "box": [401, 690, 1862, 732], "label": "Dry-run mode" }] }
+      ]
+    },
+    {
+      "id": "settings-events",
+      "kind": "screen",
+      "chapter": "SMS settings",
+      "image": "17-settings-sms-events",
+      "beats": [
+        { "text": "Under Auto-fire per event, each type of automatic SMS can be switched on or off individually — for example, notifying a team leader of a project assignment, or notifying the administrator of each daily log.", "cam": [350, 80, 1912, 874], "hl": [{ "box": [392, 198, 1868, 264], "label": "Project assignment" }, { "box": [392, 593, 1868, 659], "label": "Daily log" }] },
+        { "text": "These switches control SMS messages only. In-app notifications are still created.", "cam": [350, 80, 1912, 874], "hl": [{ "box": [1795, 140, 1868, 850], "label": "SMS on / off" }] },
+        { "text": "One important detail: these SMS preferences are saved in the web browser you're using. If an administrator signs in on another computer or browser, the settings there need to be checked separately.", "cam": "full", "callout": { "icon": "laptop", "title": "Saved per browser", "body": "SMS settings are stored on the device and browser where they were changed — not shared between administrators.", "pos": "right" } },
+        { "text": "Below the switches, Save keeps your changes to the Worker URL and Sender ID, and Test SMS sends a test message to confirm that everything is working.", "cam": "full" },
+        { "text": "The Recent SMS list then shows each message's recipient, content and status: sent, failed, or dry run. It covers messages sent from the current browser session only.", "cam": "full", "callout": { "icon": "list", "title": "Recent SMS", "body": "Recipient · message · status (sent, failed, dry run). Cleared when the page is reloaded.", "pos": "right" } }
+      ]
+    },
+    {
+      "id": "audit",
+      "kind": "screen",
+      "chapter": "The audit log",
+      "image": "15-audit-log",
+      "beats": [
+        { "text": "Now let's turn to accountability. The Audit Log, available to administrators, records the important actions taken in the system.", "cam": "full", "hl": [{ "box": [38, 562, 327, 622], "label": "Audit Log" }] },
+        { "text": "Each entry shows when the action happened, who performed it, what the action was, and the details — such as an amount, a project, or a person.", "cam": [350, 120, 1909, 560], "hl": [{ "box": [373, 211, 1888, 262], "label": "Time · User · Action · Details" }] },
+        { "text": "Here, we can see an expense being added, a project being created, funds being requested and approved, a daily log submitted, and a casual worker added.", "cam": [350, 200, 1909, 853], "hl": [{ "box": [373, 262, 1888, 641] }] },
+        { "text": "Entries are written automatically as people use the system. There's no option in the platform to edit or delete them, and the page shows the most recent one hundred entries.", "cam": [350, 200, 1909, 853], "callout": { "icon": "clock-rotate-left", "title": "Written automatically", "body": "No edit or delete option in the platform. Most recent 100 entries shown.", "pos": "right" } },
+        { "text": "The dashboard's Recent Activity panel shows the latest six entries from the same log.", "image": "02-admin-dashboard", "cam": [1120, 380, 1903, 861], "hl": [{ "box": [1150, 488, 1870, 861], "label": "Recent Activity" }] }
+      ]
+    },
+    {
+      "id": "difference",
+      "kind": "diagram",
+      "diagram": "compare",
+      "chapter": "Notifications versus audit records",
+      "data": {
+        "title": "Notification or audit record?",
+        "left": { "icon": "bell", "title": "Notification", "tag": "Prompts action", "points": ["A message to a specific person", "Says: something needs your attention", "Once read, its job is done"] },
+        "right": { "icon": "clock-rotate-left", "title": "Audit record", "tag": "Provides accountability", "points": ["A lasting entry in the system's history", "Shows who did what, and when", "Reviewed later to reconstruct events"] },
+        "footer": "Informed in the moment — accountable afterwards"
+      },
+      "beats": [
+        { "text": "It's worth being clear about the difference between a notification and an audit record.", "show": 0 },
+        { "text": "A notification is a message to a specific person. Its purpose is to prompt action: something needs your attention. Once it's read, its job is done.", "show": 1, "focus": 0 },
+        { "text": "An audit record is a lasting entry in the system's history. Its purpose is accountability: it shows who did what, and when, so the record can be reviewed later.", "show": 2, "focus": 1 },
+        { "text": "Together, they make sure that the right people are informed in the moment, and that the organisation can always reconstruct what happened afterwards.", "show": 3 }
+      ]
+    },
+    {
+      "id": "closing",
+      "kind": "closing",
+      "chapter": "Summary",
+      "takeaways": [
+        "In-app notifications prompt action",
+        "SMS reaches people wherever they are — keep phone numbers accurate",
+        "The audit log keeps a lasting record of who did what, and when"
+      ],
+      "next": "Next: Lesson 06 — System Administration, Oversight and Best Practices",
+      "beats": [
+        { "text": "To recap: in-app notifications prompt action, SMS reaches people wherever they are, and the audit log keeps a lasting record.", "show": 3 },
+        { "text": "Administrators can control which automatic SMS messages are sent and test the service safely, and everyone should keep phone numbers accurate, so that messages reach the right people.", "show": 3 },
+        { "text": "In the final lesson, we'll bring everything together with system administration, the platform's architecture, and best practices.", "show": 3, "next": true }
+      ]
+    },
+    {
+      "id": "credits",
+      "kind": "credits",
+      "chapter": "Credits",
+      "beats": [{ "text": "This training experience was produced by KEYPOLE TECHNOLOGIES." }]
+    }
+  ]
+}

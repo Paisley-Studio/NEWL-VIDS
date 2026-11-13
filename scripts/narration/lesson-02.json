@@ -1,0 +1,214 @@
+{
+  "id": "lesson-02",
+  "number": 2,
+  "title": "Project and Team Management",
+  "shortTitle": "Projects and Teams",
+  "theme": "Creating projects, assigning responsibility and managing project teams.",
+  "accent": "#1a6dff",
+  "audience": ["Administrators", "Board members", "Project owners"],
+  "description": "Create a project field by field, add a team leader, assign responsibility, and monitor the project portfolio from creation through to approved completion.",
+  "objectives": [
+    "Distinguish between creating, assigning and monitoring a project",
+    "Complete every field of the New Project form correctly",
+    "Add a team leader and understand how their credentials are issued",
+    "Assign and reassign projects to team leaders",
+    "Follow a project through its lifecycle to approved completion"
+  ],
+  "scenes": [
+    {
+      "id": "opening",
+      "kind": "opening",
+      "chapter": "Welcome",
+      "topics": ["Creating a project", "Adding a team leader", "Assigning responsibility", "Monitoring the portfolio"],
+      "beats": [
+        { "text": "Lesson two: project and team management." },
+        { "text": "In this lesson, you'll learn how projects are created, how responsibility is assigned to team leaders, and how existing projects are organised and monitored." }
+      ]
+    },
+    {
+      "id": "three",
+      "kind": "diagram",
+      "diagram": "cards",
+      "chapter": "Three distinct activities",
+      "data": {
+        "title": "Create, assign, monitor",
+        "subtitle": "Three activities that are easy to confuse",
+        "columns": 3,
+        "items": [
+          { "icon": "folder-plus", "title": "Create", "body": "Record what the work is: name, references, location, client and budget." },
+          { "icon": "user-check", "title": "Assign", "body": "Link the project to one team leader, who becomes accountable for field activity." },
+          { "icon": "chart-line", "title": "Monitor", "body": "Follow progress, activity and spending until the project is approved as complete." }
+        ],
+        "footer": { "icon": "user-shield", "text": "Creating projects and assigning team leaders are administrator tasks" }
+      },
+      "beats": [
+        { "text": "Before we begin, it helps to separate three activities that are easy to confuse.", "show": 0 },
+        { "text": "Creating a project records what the work is: its name, references, location, client and budget.", "show": 1, "focus": 0 },
+        { "text": "Assigning responsibility links that project to a team leader, who becomes accountable for its field activity.", "show": 2, "focus": 1 },
+        { "text": "And monitoring is the ongoing work of following progress, activity and spending, until the project is complete.", "show": 3, "focus": 2 },
+        { "text": "In the platform, creating projects and assigning team leaders are carried out by administrators.", "show": 3, "footer": true }
+      ]
+    },
+    {
+      "id": "create-start",
+      "kind": "screen",
+      "chapter": "Creating a project",
+      "image": "02-admin-dashboard",
+      "beats": [
+        { "text": "To create a project, start from the Home dashboard or the Projects page, and select New Project.", "cam": [900, 60, 1903, 520], "hl": [{ "box": [1472, 125, 1649, 183], "label": "New Project" }], "cursor": { "to": [1560, 154], "click": true } }
+      ]
+    },
+    {
+      "id": "create-form",
+      "kind": "screen",
+      "chapter": "Creating a project",
+      "image": "03-new-project-form-top",
+      "beats": [
+        { "text": "The New Project form opens. Let's go through each field.", "cam": [420, 40, 1490, 850] },
+        { "text": "Project Name is the name everyone will recognise, and it's required. In our example, the project is KISUMU_NITA.", "cam": [430, 60, 1480, 520], "hl": [{ "box": [474, 178, 1426, 268] }], "type": [{ "box": [474, 208, 1426, 268], "text": "KISUMU_NITA" }] },
+        { "text": "SMP is the project's SMP reference number, and it's also required. The PO Number — the purchase order — is optional, and can be added later.", "cam": [430, 60, 1480, 520], "hl": [{ "box": [474, 290, 941, 379], "label": "Required" }, { "box": [958, 290, 1426, 379], "label": "Optional" }], "type": [{ "box": [474, 319, 941, 379], "text": "SMP-WO-1851398" }] },
+        { "text": "Site Module Package describes the type of work — in this case, TI Cabinet Installation.", "cam": [430, 280, 1480, 740], "hl": [{ "box": [474, 402, 1426, 491] }], "type": [{ "box": [474, 431, 1426, 491], "text": "TI Cabinet Installation" }] },
+        { "text": "Region and Location describe where the work takes place, and Client records who the work is for.", "cam": [430, 380, 1480, 840], "hl": [{ "box": [474, 513, 1426, 602] }, { "box": [474, 624, 941, 713] }], "type": [{ "box": [958, 542, 1426, 602], "text": "KISUMU" }] },
+        { "text": "Budget is the project's allocated budget, in Kenyan shillings. This figure becomes the starting point for all of the project's financial reporting.", "cam": [430, 380, 1480, 840], "hl": [{ "box": [958, 624, 1426, 713], "label": "Allocated budget" }], "type": [{ "box": [958, 653, 1426, 713], "text": "500000" }] },
+        { "text": "Start and end dates are optional. If you enter both, the end date must come after the start date.", "cam": [430, 420, 1480, 880], "hl": [{ "box": [474, 736, 1426, 827], "label": "Optional dates" }] }
+      ]
+    },
+    {
+      "id": "create-form-2",
+      "kind": "screen",
+      "chapter": "Creating a project",
+      "image": "04-new-project-form-bottom",
+      "beats": [
+        { "text": "Further down, the Team Leader list lets you assign responsibility straight away. If the right team leader hasn't been added yet, leave it as Unassigned, and assign the project later.", "cam": [430, 260, 1480, 720], "hl": [{ "box": [475, 365, 1427, 455], "label": "Team Leader" }] },
+        { "text": "Add a short description to give context to anyone reviewing the project. Then choose a status: Active, Draft, On Hold or Completed. Most new projects start as Active.", "cam": [430, 420, 1480, 870], "hl": [{ "box": [475, 478, 1427, 612] }, { "box": [475, 643, 1427, 733], "label": "Status" }] },
+        { "text": "Finally, select Create. The project is saved, a matching budget record is created for its financial tracking, and the action is written to the audit log.", "cam": [430, 420, 1480, 870], "hl": [{ "box": [958, 762, 1427, 820], "label": "Create" }], "cursor": { "to": [1192, 791], "click": true }, "sfx": ["success"] },
+        { "text": "If a team leader was selected, and has a phone number on record, they also receive an SMS letting them know they've been assigned.", "cam": "full", "callout": { "icon": "comment-sms", "title": "Automatic SMS", "body": "“…you have been assigned to KISUMU_NITA. Login to onboard your casual workers and start submitting daily logs.”", "pos": "right" }, "sfx": ["sms"] }
+      ]
+    },
+    {
+      "id": "portfolio",
+      "kind": "screen",
+      "chapter": "The project portfolio",
+      "image": "06-projects-list",
+      "beats": [
+        { "text": "The new project now appears on the Projects page: the organisation's project portfolio.", "cam": "full", "cursor": { "to": [180, 214], "click": true } },
+        { "text": "Filter chips let you narrow the list by status — all, active, pending approval, completed, on hold, or draft. Each chip shows how many projects are in that state.", "cam": [340, 100, 1300, 420], "hl": [{ "box": [362, 229, 1246, 287], "label": "Status filters" }] },
+        { "text": "The search box filters projects by name, SMP, PO number or module package. The search bar at the very top does the same, from anywhere in the platform.", "image": "07-projects-search", "cam": [340, 0, 1911, 420], "hl": [{ "box": [393, 28, 1802, 86], "label": "Global search" }, { "box": [396, 322, 1866, 382], "label": "Project search" }] },
+        { "text": "Each project card shows the project name, its SMP reference, the module package, its status, and the assigned team leader. Here, the team leader shows a dash, meaning nobody has been assigned yet.", "image": "06-projects-list", "cam": [340, 380, 1000, 660], "hl": [{ "box": [368, 420, 859, 637] }, { "box": [388, 534, 440, 562], "label": "No team leader yet" }] },
+        { "text": "Underneath are a progress bar, the allocated budget, and the remaining balance.", "cam": [340, 380, 1000, 660], "hl": [{ "box": [388, 562, 838, 614] }] },
+        { "text": "Understand the progress bar clearly: it's an activity indicator, not a measurement of physical completion. It's calculated from the number of daily logs submitted, it never shows more than ninety per cent while a project is active, and it only reaches one hundred per cent when an administrator approves the project as complete.", "cam": [340, 380, 1000, 660], "hl": [{ "box": [388, 562, 838, 586], "label": "Activity indicator" }], "callout": { "icon": "circle-info", "title": "Progress is an indicator", "body": "Based on daily logs submitted. Capped at 90% while active. 100% only after administrator approval.", "pos": "right" } }
+      ]
+    },
+    {
+      "id": "add-tl",
+      "kind": "screen",
+      "chapter": "Adding a team leader",
+      "image": "08-team-leaders",
+      "beats": [
+        { "text": "Next, let's add a team leader. On the Team Leaders page, or from the dashboard, select Add Team Leader.", "cam": [900, 60, 1915, 520], "hl": [{ "box": [1666, 125, 1889, 183], "label": "Add Team Leader" }], "cursor": { "to": [1777, 154], "click": true } }
+      ]
+    },
+    {
+      "id": "tl-form",
+      "kind": "screen",
+      "chapter": "Adding a team leader",
+      "image": "05-new-team-leader-form",
+      "beats": [
+        { "text": "Enter the team leader's full name, their phone number, and a contact email address. Phone numbers are automatically converted to the international Kenyan format, starting with plus two five four.", "cam": [520, 40, 1390, 520], "hl": [{ "box": [582, 172, 1318, 262] }, { "box": [582, 284, 1318, 373] }], "type": [{ "box": [582, 202, 1318, 262], "text": "Tesh" }] },
+        { "text": "Next, choose a username. This becomes the team leader's sign-in name, and the system creates their sign-in address by adding @newl.africa.", "cam": [520, 260, 1390, 740], "hl": [{ "box": [582, 396, 1318, 485], "label": "Becomes tesh@newl.africa" }], "type": [{ "box": [582, 425, 1318, 485], "text": "tesh" }] },
+        { "text": "You don't set a password yourself. The system generates one automatically, saves it with the team leader's profile, and sends it to them by SMS, together with the sign-in link.", "cam": [520, 260, 1390, 740], "hl": [{ "box": [582, 506, 1318, 579], "label": "Password is generated" }] },
+        { "text": "You can also tick the projects this team leader will be responsible for.", "cam": [520, 380, 1390, 860], "hl": [{ "box": [582, 600, 1318, 741], "label": "Assign Projects" }], "cursor": { "to": [610, 679], "click": true }, "check": [[599, 668, 622, 691]] },
+        { "text": "When you select Create, the system asks you to confirm your own administrator password. This is a deliberate safety check.", "cam": [520, 380, 1390, 860], "hl": [{ "box": [957, 769, 1318, 824], "label": "Create" }], "cursor": { "to": [1137, 797], "click": true } },
+        { "text": "Because a new sign-in account is created at this point, you'll then be asked to re-enter your administrator password once more to continue your session. The new credentials are also copied to your clipboard.", "cam": "full", "callout": { "icon": "key", "title": "Two password confirmations", "body": "Once before the account is created, and once afterwards to restore your administrator session.", "pos": "right" } }
+      ]
+    },
+    {
+      "id": "tl-manage",
+      "kind": "screen",
+      "chapter": "Managing team leaders",
+      "image": "08-team-leaders",
+      "beats": [
+        { "text": "Each team leader has a card on the Team Leaders page, showing their contact details and username.", "cam": [360, 220, 1135, 680], "hl": [{ "box": [374, 237, 1121, 665] }] },
+        { "text": "The Login Credentials panel shows the sign-in email and the password generated for them. We've blurred it here, and you should treat it the same way: never display it on a shared screen, never photograph it, and share it only with the person concerned.", "cam": [360, 220, 1135, 680], "hl": [{ "box": [401, 405, 1093, 525], "label": "Sensitive — keep private" }] },
+        { "text": "Along the bottom are the management actions. Assign Projects adds or removes the projects this team leader is responsible for, and each newly assigned project triggers an SMS.", "cam": [360, 220, 1135, 680], "hl": [{ "box": [401, 537, 562, 580], "label": "Assign Projects" }], "cursor": { "to": [482, 558] } },
+        { "text": "Message sends a direct message, which arrives both as an in-app notification and as an SMS.", "cam": [360, 220, 1135, 680], "hl": [{ "box": [571, 537, 686, 580], "label": "Message" }], "cursor": { "to": [628, 558] } },
+        { "text": "Send Credentials re-sends the sign-in details by SMS, which is useful if a team leader has lost them.", "cam": [360, 220, 1135, 680], "hl": [{ "box": [868, 537, 1040, 580], "label": "Send Credentials" }], "cursor": { "to": [954, 558] } },
+        { "text": "Reset Password records a new password on the team leader's profile. In the current version, confirm with your technical team that the change has also been applied to their sign-in account before you share it.", "cam": [360, 220, 1135, 680], "hl": [{ "box": [695, 537, 859, 580], "label": "Reset Password" }], "cursor": { "to": [777, 558] }, "callout": { "icon": "triangle-exclamation", "title": "Check before sharing", "body": "Reset Password updates the stored profile password. Confirm the sign-in account was updated too.", "pos": "right" } },
+        { "text": "The red button removes a team leader. Their projects become unassigned, and their sign-in account must be removed separately by the technical administrator in the Firebase console.", "cam": [360, 220, 1135, 680], "hl": [{ "box": [1049, 537, 1091, 580], "label": "Remove" }], "cursor": { "to": [1070, 558] } },
+        { "text": "Adding, editing, assigning, messaging and removing team leaders are all recorded in the audit log.", "cam": "full" }
+      ]
+    },
+    {
+      "id": "assigned",
+      "kind": "screen",
+      "chapter": "Assigning responsibility",
+      "image": "23-admin-dashboard-attention",
+      "beats": [
+        { "text": "Once a team leader is assigned, the project shows their name. On the dashboard, KISUMU_NITA now lists Tesh as its team leader.", "cam": [350, 500, 1130, 873], "hl": [{ "box": [390, 605, 1100, 712], "label": "TL: Tesh" }] },
+        { "text": "Assignment can be made in three places: when creating the project, when creating or editing the team leader, or with the Assign Projects button.", "cam": "full" },
+        { "text": "Each project has one team leader at a time. Assigning it to someone new replaces the previous team leader, and when that change is made through the project's Edit form, the previous team leader is informed by SMS.", "cam": "full", "callout": { "icon": "user-check", "title": "One team leader per project", "body": "Reassigning a project replaces the previous team leader.", "pos": "right" } }
+      ]
+    },
+    {
+      "id": "detail",
+      "kind": "replica",
+      "chapter": "Monitoring a project",
+      "state": { "role": "admin", "page": "project", "tab": "overview", "tl": "Tesh", "expense": true },
+      "beats": [
+        { "text": "Selecting a project opens its detail page. For administrators, the top of the page shows the budget, spending plus approved funds, the remaining balance, and the team leader.", "cam": "full", "hl": [{ "target": "metrics" }] },
+        { "text": "Tabs organise the project's information: Overview, Casuals, Logs and Financials. The overview shows the project details, alongside a financial summary.", "cam": "full", "hl": [{ "target": "tabs", "label": "Tabs" }, { "target": "details-card" }, { "target": "fin-summary" }] },
+        { "text": "The edit button reopens the project form, so you can update any detail, including the status.", "cam": [900, 60, 1920, 520], "hl": [{ "target": "btn-edit", "label": "Edit" }], "cursor": { "to": "btn-edit" } },
+        { "text": "The delete button permanently removes the project, together with its casual worker records, daily logs and budget record. So the system asks for confirmation, and your administrator password, first.", "cam": [900, 60, 1920, 520], "hl": [{ "target": "btn-delete", "label": "Delete — permanent" }], "cursor": { "to": "btn-delete" } },
+        { "text": "Monitoring is a habit: review active projects regularly, compare the logs being submitted with what you expect, and follow up early when something looks out of place.", "cam": "full" }
+      ]
+    },
+    {
+      "id": "lifecycle",
+      "kind": "diagram",
+      "diagram": "flow",
+      "chapter": "The project lifecycle",
+      "data": {
+        "title": "The project lifecycle",
+        "nodes": [
+          { "icon": "folder-plus", "title": "Created", "body": "Active — or Draft / On Hold if not ready" },
+          { "icon": "person-digging", "title": "Active work", "body": "Casual workers, daily logs, fund requests" },
+          { "icon": "flag-checkered", "title": "Mark Complete", "body": "Team leader submits, with optional notes" },
+          { "icon": "hourglass-half", "title": "Pending Approval", "body": "Administrator is notified to review" }
+        ],
+        "branches": [
+          { "icon": "circle-check", "title": "Approve", "body": "Project becomes Completed", "tone": "good" },
+          { "icon": "rotate-left", "title": "Send Back", "body": "Returns to Active, with a reason", "tone": "warn" }
+        ]
+      },
+      "beats": [
+        { "text": "Finally, let's look at the complete project lifecycle.", "show": 0 },
+        { "text": "A project is created as active — or as a draft, or on hold, if it isn't ready to start.", "show": 1, "focus": 0 },
+        { "text": "While it's active, the team leader manages casual workers, submits daily logs, and may request additional funds.", "show": 2, "focus": 1 },
+        { "text": "When the work is finished, the team leader selects Mark Complete. The project moves to Pending Approval, and the administrator is notified.", "show": 4, "focus": 3, "sfx": ["chime"] },
+        { "text": "The administrator then either approves it, which marks the project as completed, or sends it back with a reason, which returns it to active so the team leader can address the issue.", "show": 6, "focus": 4 }
+      ]
+    },
+    {
+      "id": "closing",
+      "kind": "closing",
+      "chapter": "Summary",
+      "takeaways": [
+        "Create projects with accurate references and budgets",
+        "Add team leaders and protect their credentials",
+        "One team leader per project — every assignment is notified and recorded"
+      ],
+      "next": "Next: Lesson 03 — Site Operations, Casual Workers and Daily Reporting",
+      "beats": [
+        { "text": "To summarise: administrators create projects with accurate references and budgets, add team leaders with their own credentials, and assign responsibility clearly.", "show": 2 },
+        { "text": "Each assignment notifies the team leader, each change is recorded, and each project follows a clear path from creation to approved completion.", "show": 3 },
+        { "text": "In the next lesson, we'll move into the field, and see how team leaders record casual workers and submit their daily reports.", "show": 3, "next": true }
+      ]
+    },
+    {
+      "id": "credits",
+      "kind": "credits",
+      "chapter": "Credits",
+      "beats": [{ "text": "This training experience was produced by KEYPOLE TECHNOLOGIES." }]
+    }
+  ]
+}

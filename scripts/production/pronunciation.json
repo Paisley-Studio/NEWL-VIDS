@@ -1,0 +1,16 @@
+{
+  "_comment": "Display text (subtitles) -> spoken text for the narrator. Regex patterns applied in order; $1 is the first capture group. Shared by generate_narration.py and src/export.ts.",
+  "rules": [
+    ["NEWL AFRICA", "New L Africa"],
+    ["KEYPOLE TECHNOLOGIES", "Keypole Technologies"],
+    ["KISUMU_NITA", "Kisumu Nita"],
+    ["KISUMU", "Kisumu"],
+    ["KES ([\\d,]+)", "$1 Kenyan shillings"],
+    ["@newl\\.africa", " at new L dot africa"],
+    ["Mobilesasa", "Mobile Sasa"],
+    ["\\bTI\\b", "T.I."],
+    ["\\bPO\\b", "P.O."],
+    ["\\bSMP\\b", "S.M.P."],
+    ["\\bdaily_logs\\b", "daily logs"]
+  ]
+}

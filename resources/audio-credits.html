@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Credits and licences · NEWL AFRICA Training</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/learning-centre.css">
+<link rel="stylesheet" href="../assets/css/document.css">
+</head>
+<body>
+<header class="topnav"><div class="wrap topnav-inner">
+  <a class="brand" href="../index.html"><span class="mark"><i class="fas fa-tower-cell"></i></span><span><b>NEWL AFRICA</b><small>DIGITAL SYSTEM TRAINING CENTRE</small></span></a>
+  <nav class="links"><a href="../index.html#lessons">Lessons</a><a href="../index.html#resources">Resources</a></nav>
+</div></header>
+<main class="wrap doc">
+<a class="back" href="../index.html#resources"><i class="fas fa-arrow-left"></i> Back to the training centre</a>
+<article>
+<h1>Credits and licences</h1>
+<p><strong>Production and creative technology: KEYPOLE TECHNOLOGIES.</strong> The KEYPOLE TECHNOLOGIES logo used in every closing sequence and in the learning-centre footer is the supplied original artwork (<code>public/branding/keypole-technologies-logo.png</code>), used unaltered.</p>
+<h2>Narration</h2>
+<ul><li><strong>Voice:</strong> <code>en-US-ChristopherNeural</code>, a mature American male neural voice, rate −4%.</li><li><strong>Engine:</strong> Microsoft Edge neural text-to-speech, accessed with the open-source <a href="https://github.com/rany2/edge-tts"><code>edge-tts</code></a> client (GPL-3.0 tool; the tool's licence does not extend to the generated audio).</li><li><strong>Licensing note:</strong> the free Edge read-aloud service has no published commercial licence. For a formally licensed master, generate the same voice through <strong>Azure AI Speech</strong> under an Azure subscription (identical voice name), or set <code>NARRATION_VOICE</code> to a voice from another licensed provider. The pipeline is engine-agnostic: only <code>scripts/production/generate_narration.py</code> changes; timings, subtitles and video sync are regenerated automatically.</li><li>Pronunciation rules (for example “NEWL” → “New L”, “KES 500,000” → “500,000 Kenyan shillings”) live in <code>scripts/production/pronunciation.json</code>.</li></ul>
+<h2>Music and sound effects</h2>
+<p>All background music (one original loop per lesson) and all sound effects (interface clicks, typing, confirmation tones, notification chime, SMS delivery, transitions, opening riser and logo impact) were <strong>synthesised from scratch</strong> by <code>scripts/production/generate_audio_assets.py</code> using additive synthesis in NumPy. No samples, loops or third-party recordings are used. They are original works created for this production and carry no third-party licence obligations.</p>
+<h2>Typography and icons</h2>
+<ul><li><strong>Inter</strong> typeface by Rasmus Andersson, SIL Open Font License 1.1 (<code>public/fonts/Inter-OFL-LICENSE.txt</code>); the same font the NEWL AFRICA application uses.</li><li><strong>Font Awesome Free</strong> icons (the icon set the application uses), icons under CC BY 4.0, code under MIT — © Fonticons, Inc. https://fontawesome.com/license/free</li></ul>
+<h2>Software</h2>
+<p>Rendering: Remotion 4 (React-based video; check the <a href="https://www.remotion.dev/license">Remotion licence</a> — organisations above the free-tier threshold require a company licence), FFmpeg (bundled with Remotion), Chromium headless shell.</p>
+</article>
+</main>
+<footer class="footer"><div class="wrap footer-inner">
+  <div class="footer-newl"><span class="mark"><i class="fas fa-tower-cell"></i></span><div><b>NEWL AFRICA</b><small>Digital System Training Centre</small></div></div>
+  <div class="footer-credit"><img src="../public/branding/keypole-technologies-logo.png" alt="KEYPOLE TECHNOLOGIES" width="240" height="160"><p>Training Experience Designed &amp; Developed by <b>KEYPOLE TECHNOLOGIES</b>.</p></div>
+</div></footer>
+</body>
+</html>

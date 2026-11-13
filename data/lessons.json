@@ -1,0 +1,440 @@
+{
+  "generated": "2026-11-13T00:14:16.907Z",
+  "lessons": [
+    {
+      "id": "lesson-01",
+      "number": 1,
+      "title": "Introducing the NEWL AFRICA Management System",
+      "shortTitle": "Introducing the System",
+      "theme": "Understanding the platform, its purpose and the organisational picture.",
+      "description": "The big picture: why the platform exists, how secure sign-in works, what the dashboard tells you, how to find your way around, and who is responsible for what.",
+      "audience": [
+        "Board members",
+        "Project owners",
+        "Administrators",
+        "Team leaders"
+      ],
+      "objectives": [
+        "Explain the purpose of the NEWL AFRICA management platform",
+        "Sign in securely using the correct role tab",
+        "Read the administrator dashboard and its summary figures",
+        "Navigate the main areas of the system",
+        "Describe the responsibilities of administrators and team leaders"
+      ],
+      "accent": "#1e6b3a",
+      "duration": 493.9,
+      "narrationComplete": true,
+      "chapters": [
+        {
+          "title": "Welcome",
+          "start": 0
+        },
+        {
+          "title": "Why the platform exists",
+          "start": 20
+        },
+        {
+          "title": "Who uses the system",
+          "start": 98.9
+        },
+        {
+          "title": "Secure sign-in",
+          "start": 164.2
+        },
+        {
+          "title": "The administrator dashboard",
+          "start": 235
+        },
+        {
+          "title": "Finding your way around",
+          "start": 313.4
+        },
+        {
+          "title": "The team leader's view",
+          "start": 375.4
+        },
+        {
+          "title": "How information moves",
+          "start": 412.7
+        },
+        {
+          "title": "Summary",
+          "start": 454.6
+        }
+      ],
+      "video": "videos/lesson-01/newl-africa-lesson-01.mp4",
+      "poster": "videos/lesson-01/poster.jpg",
+      "subtitles": {
+        "vtt": "subtitles/lesson-01.en.vtt",
+        "srt": "subtitles/lesson-01.en.srt"
+      },
+      "script": "resources/scripts/lesson-01.md"
+    },
+    {
+      "id": "lesson-02",
+      "number": 2,
+      "title": "Project and Team Management",
+      "shortTitle": "Projects and Teams",
+      "theme": "Creating projects, assigning responsibility and managing project teams.",
+      "description": "Create a project field by field, add a team leader, assign responsibility, and monitor the project portfolio from creation through to approved completion.",
+      "audience": [
+        "Administrators",
+        "Board members",
+        "Project owners"
+      ],
+      "objectives": [
+        "Distinguish between creating, assigning and monitoring a project",
+        "Complete every field of the New Project form correctly",
+        "Add a team leader and understand how their credentials are issued",
+        "Assign and reassign projects to team leaders",
+        "Follow a project through its lifecycle to approved completion"
+      ],
+      "accent": "#1a6dff",
+      "duration": 579.1,
+      "narrationComplete": true,
+      "chapters": [
+        {
+          "title": "Welcome",
+          "start": 0
+        },
+        {
+          "title": "Three distinct activities",
+          "start": 19.7
+        },
+        {
+          "title": "Creating a project",
+          "start": 57.2
+        },
+        {
+          "title": "The project portfolio",
+          "start": 171.2
+        },
+        {
+          "title": "Adding a team leader",
+          "start": 244.4
+        },
+        {
+          "title": "Managing team leaders",
+          "start": 318.2
+        },
+        {
+          "title": "Assigning responsibility",
+          "start": 401.8
+        },
+        {
+          "title": "Monitoring a project",
+          "start": 436.6
+        },
+        {
+          "title": "The project lifecycle",
+          "start": 494.9
+        },
+        {
+          "title": "Summary",
+          "start": 536.9
+        }
+      ],
+      "video": "videos/lesson-02/newl-africa-lesson-02.mp4",
+      "poster": "videos/lesson-02/poster.jpg",
+      "subtitles": {
+        "vtt": "subtitles/lesson-02.en.vtt",
+        "srt": "subtitles/lesson-02.en.srt"
+      },
+      "script": "resources/scripts/lesson-02.md"
+    },
+    {
+      "id": "lesson-03",
+      "number": 3,
+      "title": "Site Operations, Casual Workers and Daily Reporting",
+      "shortTitle": "Site Operations and Reporting",
+      "theme": "Understanding how field activities are captured and reported.",
+      "description": "The team leader's workspace in practice: recording casual workers, preparing and submitting the daily log, and how field reports reach management.",
+      "audience": [
+        "Team leaders",
+        "Administrators",
+        "Board members"
+      ],
+      "objectives": [
+        "Use the team leader workspace and project page",
+        "Add, edit and remove casual worker records",
+        "Prepare and submit an accurate daily log",
+        "Explain how submitted reports reach management",
+        "Mark a project complete for administrator approval"
+      ],
+      "accent": "#e67e22",
+      "duration": 446.9,
+      "narrationComplete": true,
+      "chapters": [
+        {
+          "title": "Welcome",
+          "start": 0
+        },
+        {
+          "title": "The team leader's workspace",
+          "start": 20.7
+        },
+        {
+          "title": "Team leader responsibilities",
+          "start": 64.1
+        },
+        {
+          "title": "Your project page",
+          "start": 92.7
+        },
+        {
+          "title": "Adding casual workers",
+          "start": 121
+        },
+        {
+          "title": "Managing worker records",
+          "start": 173.5
+        },
+        {
+          "title": "Submitting a daily log",
+          "start": 212.3
+        },
+        {
+          "title": "After submission",
+          "start": 305.8
+        },
+        {
+          "title": "How reports reach management",
+          "start": 334.1
+        },
+        {
+          "title": "Completing a project",
+          "start": 383.2
+        },
+        {
+          "title": "Summary",
+          "start": 408.1
+        }
+      ],
+      "video": "videos/lesson-03/newl-africa-lesson-03.mp4",
+      "poster": "videos/lesson-03/poster.jpg",
+      "subtitles": {
+        "vtt": "subtitles/lesson-03.en.vtt",
+        "srt": "subtitles/lesson-03.en.srt"
+      },
+      "script": "resources/scripts/lesson-03.md"
+    },
+    {
+      "id": "lesson-04",
+      "number": 4,
+      "title": "Financial Management and Budget Intelligence",
+      "shortTitle": "Financial Management",
+      "theme": "Understanding project allocations, expenditure and additional funding.",
+      "description": "Follow the money: how budgets, expenditure and approved funds combine into the remaining balance, how to read the financial analytics, and how additional fund requests are submitted, reviewed and decided.",
+      "audience": [
+        "Board members",
+        "Project owners",
+        "Administrators",
+        "Team leaders"
+      ],
+      "objectives": [
+        "Explain how the remaining balance is calculated",
+        "Read the Financials overview, charts and per-project breakdown",
+        "Record expenditure with a traceable reference",
+        "Submit a well-justified additional fund request",
+        "Approve, adjust or decline a fund request and understand its effect"
+      ],
+      "accent": "#16a085",
+      "duration": 508,
+      "narrationComplete": true,
+      "chapters": [
+        {
+          "title": "Welcome",
+          "start": 0
+        },
+        {
+          "title": "Why financial transparency matters",
+          "start": 20.9
+        },
+        {
+          "title": "How the figures are calculated",
+          "start": 56.7
+        },
+        {
+          "title": "The financial overview",
+          "start": 100.7
+        },
+        {
+          "title": "Reading the analytics",
+          "start": 156.3
+        },
+        {
+          "title": "Recording expenditure",
+          "start": 210.9
+        },
+        {
+          "title": "Requesting additional funds",
+          "start": 250.4
+        },
+        {
+          "title": "Reviewing a request",
+          "start": 301.7
+        },
+        {
+          "title": "After approval",
+          "start": 368.8
+        },
+        {
+          "title": "Using financial information responsibly",
+          "start": 423.4
+        },
+        {
+          "title": "Summary",
+          "start": 462.4
+        }
+      ],
+      "video": "videos/lesson-04/newl-africa-lesson-04.mp4",
+      "poster": "videos/lesson-04/poster.jpg",
+      "subtitles": {
+        "vtt": "subtitles/lesson-04.en.vtt",
+        "srt": "subtitles/lesson-04.en.srt"
+      },
+      "script": "resources/scripts/lesson-04.md"
+    },
+    {
+      "id": "lesson-05",
+      "number": 5,
+      "title": "Notifications, Communication and Accountability",
+      "shortTitle": "Notifications and Accountability",
+      "theme": "Keeping the organisation informed and maintaining an accountability trail.",
+      "description": "How in-app notifications and SMS messages keep people informed, which events trigger them, what the SMS settings actually control, and how the audit log maintains a lasting record of actions.",
+      "audience": [
+        "Administrators",
+        "Team leaders",
+        "Board members"
+      ],
+      "objectives": [
+        "Use the notification centre",
+        "Identify which events notify whom, and through which channel",
+        "Explain how an SMS travels from the platform to a phone",
+        "Configure SMS settings, dry-run mode and per-event switches",
+        "Distinguish a notification from an audit record"
+      ],
+      "accent": "#8a5fd6",
+      "duration": 410.8,
+      "narrationComplete": true,
+      "chapters": [
+        {
+          "title": "Welcome",
+          "start": 0
+        },
+        {
+          "title": "Two ways to keep people informed",
+          "start": 21.4
+        },
+        {
+          "title": "The notification centre",
+          "start": 52.1
+        },
+        {
+          "title": "Which events notify whom",
+          "start": 91.3
+        },
+        {
+          "title": "How SMS messages are delivered",
+          "start": 142.4
+        },
+        {
+          "title": "SMS settings",
+          "start": 180.3
+        },
+        {
+          "title": "The audit log",
+          "start": 279.1
+        },
+        {
+          "title": "Notifications versus audit records",
+          "start": 328.5
+        },
+        {
+          "title": "Summary",
+          "start": 367.7
+        }
+      ],
+      "video": "videos/lesson-05/newl-africa-lesson-05.mp4",
+      "poster": "videos/lesson-05/poster.jpg",
+      "subtitles": {
+        "vtt": "subtitles/lesson-05.en.vtt",
+        "srt": "subtitles/lesson-05.en.srt"
+      },
+      "script": "resources/scripts/lesson-05.md"
+    },
+    {
+      "id": "lesson-06",
+      "number": 6,
+      "title": "System Administration, Oversight and Best Practices",
+      "shortTitle": "Administration and Best Practices",
+      "theme": "Managing the platform responsibly and understanding its underlying architecture.",
+      "description": "The administrator's responsibilities, user access, profile and settings, how the platform is built on Firebase, Firestore, Cloudflare and Mobilesasa, and the habits that keep records reliable.",
+      "audience": [
+        "Administrators",
+        "Board members",
+        "Project owners",
+        "Team leaders"
+      ],
+      "objectives": [
+        "Describe the administrator's responsibilities",
+        "Manage user access responsibly",
+        "Explain the platform's architecture in plain terms",
+        "Understand what security depends on",
+        "Apply best practices for reliable records and effective oversight"
+      ],
+      "accent": "#d63a6a",
+      "duration": 405.9,
+      "narrationComplete": true,
+      "chapters": [
+        {
+          "title": "Welcome",
+          "start": 0
+        },
+        {
+          "title": "The administrator's responsibilities",
+          "start": 20.5
+        },
+        {
+          "title": "User access",
+          "start": 57.6
+        },
+        {
+          "title": "Profile and settings",
+          "start": 98.6
+        },
+        {
+          "title": "How the platform is built",
+          "start": 131.7
+        },
+        {
+          "title": "The main data areas",
+          "start": 187.2
+        },
+        {
+          "title": "Security and configuration",
+          "start": 217.9
+        },
+        {
+          "title": "Best practices",
+          "start": 271.1
+        },
+        {
+          "title": "What the Board should look for",
+          "start": 316.6
+        },
+        {
+          "title": "Summary",
+          "start": 359.1
+        }
+      ],
+      "video": "videos/lesson-06/newl-africa-lesson-06.mp4",
+      "poster": "videos/lesson-06/poster.jpg",
+      "subtitles": {
+        "vtt": "subtitles/lesson-06.en.vtt",
+        "srt": "subtitles/lesson-06.en.srt"
+      },
+      "script": "resources/scripts/lesson-06.md"
+    }
+  ]
+}

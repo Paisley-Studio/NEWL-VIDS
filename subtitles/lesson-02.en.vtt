@@ -1,0 +1,659 @@
+WEBVTT
+Kind: captions
+Language: en
+
+1
+00:00:04.652 --> 00:00:07.917 line:88% position:50% align:center
+Lesson two: project and team management.
+
+2
+00:00:08.952 --> 00:00:12.210 line:88% position:50% align:center
+In this lesson, you'll learn
+how projects are created,
+
+3
+00:00:12.220 --> 00:00:15.075 line:88% position:50% align:center
+how responsibility is
+assigned to team leaders,
+
+4
+00:00:15.085 --> 00:00:18.493 line:88% position:50% align:center
+and how existing projects
+are organised and monitored.
+
+5
+00:00:20.452 --> 00:00:25.709 line:88% position:50% align:center
+Before we begin, it helps to separate
+three activities that are easy to confuse.
+
+6
+00:00:26.752 --> 00:00:30.349 line:88% position:50% align:center
+Creating a project records
+what the work is: its name,
+
+7
+00:00:30.359 --> 00:00:33.819 line:88% position:50% align:center
+references, location, client and budget.
+
+8
+00:00:34.852 --> 00:00:38.501 line:88% position:50% align:center
+Assigning responsibility links
+that project to a team leader,
+
+9
+00:00:38.511 --> 00:00:41.190 line:88% position:50% align:center
+who becomes accountable
+for its field activity.
+
+10
+00:00:42.252 --> 00:00:45.614 line:88% position:50% align:center
+And monitoring is the ongoing
+work of following progress,
+
+11
+00:00:45.624 --> 00:00:49.306 line:88% position:50% align:center
+activity and spending, until
+the project is complete.
+
+12
+00:00:50.352 --> 00:00:54.951 line:88% position:50% align:center
+In the platform, creating projects and
+assigning team leaders are carried out by
+
+13
+00:00:54.961 --> 00:00:56.299 line:88% position:50% align:center
+administrators.
+
+14
+00:00:57.819 --> 00:01:02.249 line:88% position:50% align:center
+To create a project, start from the
+Home dashboard or the Projects page,
+
+15
+00:01:02.259 --> 00:01:04.169 line:88% position:50% align:center
+and select New Project.
+
+16
+00:01:05.585 --> 00:01:07.847 line:88% position:50% align:center
+The New Project form opens.
+
+17
+00:01:08.348 --> 00:01:10.362 line:88% position:50% align:center
+Let's go through each field.
+
+18
+00:01:11.385 --> 00:01:14.318 line:88% position:50% align:center
+Project Name is the name
+everyone will recognise,
+
+19
+00:01:14.328 --> 00:01:15.704 line:88% position:50% align:center
+and it's required.
+
+20
+00:01:16.205 --> 00:01:19.587 line:88% position:50% align:center
+In our example, the project is KISUMU_NITA.
+
+21
+00:01:20.619 --> 00:01:25.498 line:88% position:50% align:center
+SMP is the project's SMP reference
+number, and it's also required.
+
+22
+00:01:25.999 --> 00:01:29.413 line:88% position:50% align:center
+The PO Number — the purchase
+order — is optional,
+
+23
+00:01:29.423 --> 00:01:31.113 line:88% position:50% align:center
+and can be added later.
+
+24
+00:01:32.152 --> 00:01:35.215 line:88% position:50% align:center
+Site Module Package
+describes the type of work
+
+25
+00:01:35.225 --> 00:01:38.346 line:88% position:50% align:center
+— in this case, TI Cabinet Installation.
+
+26
+00:01:39.385 --> 00:01:42.552 line:88% position:50% align:center
+Region and Location describe
+where the work takes place,
+
+27
+00:01:42.562 --> 00:01:45.124 line:88% position:50% align:center
+and Client records who the work is for.
+
+28
+00:01:46.185 --> 00:01:50.439 line:88% position:50% align:center
+Budget is the project's allocated
+budget, in Kenyan shillings.
+
+29
+00:01:50.940 --> 00:01:55.546 line:88% position:50% align:center
+This figure becomes the starting point for
+all of the project's financial reporting.
+
+30
+00:01:56.585 --> 00:01:58.964 line:88% position:50% align:center
+Start and end dates are optional.
+
+31
+00:01:59.465 --> 00:02:03.394 line:88% position:50% align:center
+If you enter both, the end date
+must come after the start date.
+
+32
+00:02:04.785 --> 00:02:09.795 line:88% position:50% align:center
+Further down, the Team Leader list lets
+you assign responsibility straight away.
+
+33
+00:02:10.295 --> 00:02:12.902 line:88% position:50% align:center
+If the right team leader
+hasn't been added yet,
+
+34
+00:02:12.912 --> 00:02:16.320 line:88% position:50% align:center
+leave it as Unassigned, and
+assign the project later.
+
+35
+00:02:17.352 --> 00:02:21.841 line:88% position:50% align:center
+Add a short description to give context
+to anyone reviewing the project.
+
+36
+00:02:22.341 --> 00:02:27.181 line:88% position:50% align:center
+Then choose a status: Active,
+Draft, On Hold or Completed.
+
+37
+00:02:27.680 --> 00:02:30.319 line:88% position:50% align:center
+Most new projects start as Active.
+
+38
+00:02:31.385 --> 00:02:33.725 line:88% position:50% align:center
+Finally, select Create.
+
+39
+00:02:34.226 --> 00:02:38.369 line:88% position:50% align:center
+The project is saved, a matching budget
+record is created for its financial
+
+40
+00:02:38.379 --> 00:02:41.748 line:88% position:50% align:center
+tracking, and the action is
+written to the audit log.
+
+41
+00:02:42.785 --> 00:02:46.525 line:88% position:50% align:center
+If a team leader was selected,
+and has a phone number on record,
+
+42
+00:02:46.535 --> 00:02:50.386 line:88% position:50% align:center
+they also receive an SMS letting
+them know they've been assigned.
+
+43
+00:02:51.785 --> 00:02:54.861 line:88% position:50% align:center
+The new project now appears
+on the Projects page:
+
+44
+00:02:54.871 --> 00:02:57.536 line:88% position:50% align:center
+the organisation's project portfolio.
+
+45
+00:02:58.585 --> 00:03:01.648 line:88% position:50% align:center
+Filter chips let you
+narrow the list by status
+
+46
+00:03:01.658 --> 00:03:05.697 line:88% position:50% align:center
+— all, active, pending
+approval, completed, on hold,
+
+47
+00:03:05.707 --> 00:03:10.680 line:88% position:50% align:center
+or draft. Each chip shows how
+many projects are in that state.
+
+48
+00:03:11.719 --> 00:03:18.030 line:88% position:50% align:center
+The search box filters projects by
+name, SMP, PO number or module package.
+
+49
+00:03:18.531 --> 00:03:23.085 line:88% position:50% align:center
+The search bar at the very top does the
+same, from anywhere in the platform.
+
+50
+00:03:24.119 --> 00:03:28.432 line:88% position:50% align:center
+Each project card shows the
+project name, its SMP reference,
+
+51
+00:03:28.442 --> 00:03:32.657 line:88% position:50% align:center
+the module package, its status,
+and the assigned team leader.
+
+52
+00:03:33.158 --> 00:03:37.894 line:88% position:50% align:center
+Here, the team leader shows a dash,
+meaning nobody has been assigned yet.
+
+53
+00:03:38.919 --> 00:03:42.242 line:88% position:50% align:center
+Underneath are a progress
+bar, the allocated budget,
+
+54
+00:03:42.252 --> 00:03:43.981 line:88% position:50% align:center
+and the remaining balance.
+
+55
+00:03:45.019 --> 00:03:49.072 line:88% position:50% align:center
+Understand the progress bar
+clearly: it's an activity indicator,
+
+56
+00:03:49.082 --> 00:03:51.474 line:88% position:50% align:center
+not a measurement of physical completion.
+
+57
+00:03:51.974 --> 00:03:55.024 line:88% position:50% align:center
+It's calculated from the
+number of daily logs submitted,
+
+58
+00:03:55.034 --> 00:03:58.657 line:88% position:50% align:center
+it never shows more than ninety
+per cent while a project is active,
+
+59
+00:03:58.667 --> 00:04:02.537 line:88% position:50% align:center
+and it only reaches one hundred per cent
+when an administrator approves the project
+
+60
+00:04:02.547 --> 00:04:03.650 line:88% position:50% align:center
+as complete.
+
+61
+00:04:05.052 --> 00:04:07.432 line:88% position:50% align:center
+Next, let's add a team leader.
+
+62
+00:04:07.932 --> 00:04:10.995 line:88% position:50% align:center
+On the Team Leaders page,
+or from the dashboard,
+
+63
+00:04:11.005 --> 00:04:12.902 line:88% position:50% align:center
+select Add Team Leader.
+
+64
+00:04:14.285 --> 00:04:17.335 line:88% position:50% align:center
+Enter the team leader's full
+name, their phone number,
+
+65
+00:04:17.345 --> 00:04:19.477 line:88% position:50% align:center
+and a contact email address.
+
+66
+00:04:19.977 --> 00:04:24.186 line:88% position:50% align:center
+Phone numbers are automatically converted
+to the international Kenyan format,
+
+67
+00:04:24.196 --> 00:04:26.588 line:88% position:50% align:center
+starting with plus two five four.
+
+68
+00:04:27.619 --> 00:04:29.790 line:88% position:50% align:center
+Next, choose a username.
+
+69
+00:04:30.290 --> 00:04:34.473 line:88% position:50% align:center
+This becomes the team leader's sign-in
+name, and the system creates their sign-in
+
+70
+00:04:34.483 --> 00:04:37.266 line:88% position:50% align:center
+address by adding @newl.africa.
+
+71
+00:04:38.285 --> 00:04:40.573 line:88% position:50% align:center
+You don't set a password yourself.
+
+72
+00:04:41.074 --> 00:04:45.985 line:88% position:50% align:center
+The system generates one automatically,
+saves it with the team leader's profile,
+
+73
+00:04:45.995 --> 00:04:50.003 line:88% position:50% align:center
+and sends it to them by SMS,
+together with the sign-in link.
+
+74
+00:04:51.052 --> 00:04:55.333 line:88% position:50% align:center
+You can also tick the projects this
+team leader will be responsible for.
+
+75
+00:04:56.385 --> 00:05:00.607 line:88% position:50% align:center
+When you select Create, the system asks
+you to confirm your own administrator
+
+76
+00:05:00.617 --> 00:05:04.418 line:88% position:50% align:center
+password. This is a deliberate safety check.
+
+77
+00:05:05.452 --> 00:05:08.593 line:88% position:50% align:center
+Because a new sign-in account
+is created at this point,
+
+78
+00:05:08.603 --> 00:05:12.591 line:88% position:50% align:center
+you'll then be asked to re-enter your
+administrator password once more to continue
+
+79
+00:05:12.601 --> 00:05:17.378 line:88% position:50% align:center
+your session. The new credentials
+are also copied to your clipboard.
+
+80
+00:05:18.785 --> 00:05:21.965 line:88% position:50% align:center
+Each team leader has a card
+on the Team Leaders page,
+
+81
+00:05:21.975 --> 00:05:24.823 line:88% position:50% align:center
+showing their contact details and username.
+
+82
+00:05:25.852 --> 00:05:30.425 line:88% position:50% align:center
+The Login Credentials panel shows the
+sign-in email and the password generated for
+
+83
+00:05:30.435 --> 00:05:34.842 line:88% position:50% align:center
+them. We've blurred it here, and
+you should treat it the same way:
+
+84
+00:05:34.852 --> 00:05:38.435 line:88% position:50% align:center
+never display it on a shared
+screen, never photograph it,
+
+85
+00:05:38.445 --> 00:05:41.020 line:88% position:50% align:center
+and share it only with the person concerned.
+
+86
+00:05:42.052 --> 00:05:44.770 line:88% position:50% align:center
+Along the bottom are the management actions.
+
+87
+00:05:45.270 --> 00:05:50.286 line:88% position:50% align:center
+Assign Projects adds or removes the projects
+this team leader is responsible for,
+
+88
+00:05:50.296 --> 00:05:53.743 line:88% position:50% align:center
+and each newly assigned
+project triggers an SMS.
+
+89
+00:05:54.785 --> 00:06:00.992 line:88% position:50% align:center
+Message sends a direct message, which arrives
+both as an in-app notification and as an SMS.
+
+90
+00:06:02.019 --> 00:06:05.928 line:88% position:50% align:center
+Send Credentials re-sends
+the sign-in details by SMS,
+
+91
+00:06:05.938 --> 00:06:08.812 line:88% position:50% align:center
+which is useful if a team
+leader has lost them.
+
+92
+00:06:09.852 --> 00:06:14.210 line:88% position:50% align:center
+Reset Password records a new password
+on the team leader's profile.
+
+93
+00:06:14.711 --> 00:06:18.711 line:88% position:50% align:center
+In the current version, confirm with your
+technical team that the change has also
+
+94
+00:06:18.721 --> 00:06:21.686 line:88% position:50% align:center
+been applied to their sign-in
+account before you share it.
+
+95
+00:06:22.719 --> 00:06:25.229 line:88% position:50% align:center
+The red button removes a team leader.
+
+96
+00:06:25.729 --> 00:06:29.664 line:88% position:50% align:center
+Their projects become unassigned, and
+their sign-in account must be removed
+
+97
+00:06:29.674 --> 00:06:33.538 line:88% position:50% align:center
+separately by the technical
+administrator in the Firebase console.
+
+98
+00:06:34.585 --> 00:06:39.705 line:88% position:50% align:center
+Adding, editing, assigning, messaging and
+removing team leaders are all recorded in
+
+99
+00:06:39.715 --> 00:06:40.975 line:88% position:50% align:center
+the audit log.
+
+100
+00:06:42.385 --> 00:06:46.392 line:88% position:50% align:center
+Once a team leader is assigned,
+the project shows their name.
+
+101
+00:06:46.892 --> 00:06:51.485 line:88% position:50% align:center
+On the dashboard, KISUMU_NITA now
+lists Tesh as its team leader.
+
+102
+00:06:52.552 --> 00:06:56.683 line:88% position:50% align:center
+Assignment can be made in three
+places: when creating the project,
+
+103
+00:06:56.693 --> 00:07:01.273 line:88% position:50% align:center
+when creating or editing the team leader,
+or with the Assign Projects button.
+
+104
+00:07:02.319 --> 00:07:05.297 line:88% position:50% align:center
+Each project has one team leader at a time.
+
+105
+00:07:05.798 --> 00:07:09.395 line:88% position:50% align:center
+Assigning it to someone new
+replaces the previous team leader,
+
+106
+00:07:09.405 --> 00:07:12.376 line:88% position:50% align:center
+and when that change is made
+through the project's Edit form,
+
+107
+00:07:12.386 --> 00:07:15.768 line:88% position:50% align:center
+the previous team leader is informed by SMS.
+
+108
+00:07:17.185 --> 00:07:20.398 line:88% position:50% align:center
+Selecting a project opens its detail page.
+
+109
+00:07:20.898 --> 00:07:24.430 line:88% position:50% align:center
+For administrators, the top
+of the page shows the budget,
+
+110
+00:07:24.440 --> 00:07:27.802 line:88% position:50% align:center
+spending plus approved
+funds, the remaining balance,
+
+111
+00:07:27.812 --> 00:07:29.241 line:88% position:50% align:center
+and the team leader.
+
+112
+00:07:30.285 --> 00:07:33.634 line:88% position:50% align:center
+Tabs organise the project's
+information: Overview,
+
+113
+00:07:33.644 --> 00:07:36.401 line:88% position:50% align:center
+Casuals, Logs and Financials.
+
+114
+00:07:36.902 --> 00:07:41.625 line:88% position:50% align:center
+The overview shows the project
+details, alongside a financial summary.
+
+115
+00:07:42.685 --> 00:07:47.206 line:88% position:50% align:center
+The edit button reopens the project
+form, so you can update any detail,
+
+116
+00:07:47.216 --> 00:07:48.892 line:88% position:50% align:center
+including the status.
+
+117
+00:07:49.919 --> 00:07:52.774 line:88% position:50% align:center
+The delete button permanently
+removes the project,
+
+118
+00:07:52.784 --> 00:07:57.325 line:88% position:50% align:center
+together with its casual worker
+records, daily logs and budget record.
+
+119
+00:07:57.825 --> 00:08:03.082 line:88% position:50% align:center
+So the system asks for confirmation,
+and your administrator password, first.
+
+120
+00:08:04.119 --> 00:08:08.041 line:88% position:50% align:center
+Monitoring is a habit: review
+active projects regularly,
+
+121
+00:08:08.051 --> 00:08:11.062 line:88% position:50% align:center
+compare the logs being
+submitted with what you expect,
+
+122
+00:08:11.072 --> 00:08:14.090 line:88% position:50% align:center
+and follow up early when
+something looks out of place.
+
+123
+00:08:15.652 --> 00:08:19.216 line:88% position:50% align:center
+Finally, let's look at the
+complete project lifecycle.
+
+124
+00:08:20.252 --> 00:08:23.641 line:88% position:50% align:center
+A project is created as
+active — or as a draft,
+
+125
+00:08:23.651 --> 00:08:26.355 line:88% position:50% align:center
+or on hold, if it isn't ready to start.
+
+126
+00:08:27.419 --> 00:08:31.081 line:88% position:50% align:center
+While it's active, the team
+leader manages casual workers,
+
+127
+00:08:31.091 --> 00:08:35.059 line:88% position:50% align:center
+submits daily logs, and may
+request additional funds.
+
+128
+00:08:36.119 --> 00:08:40.061 line:88% position:50% align:center
+When the work is finished, the
+team leader selects Mark Complete.
+
+129
+00:08:40.561 --> 00:08:45.089 line:88% position:50% align:center
+The project moves to Pending Approval,
+and the administrator is notified.
+
+130
+00:08:46.119 --> 00:08:50.497 line:88% position:50% align:center
+The administrator then either approves
+it, which marks the project as completed,
+
+131
+00:08:50.507 --> 00:08:54.677 line:88% position:50% align:center
+or sends it back with a reason, which
+returns it to active so the team leader can
+
+132
+00:08:54.687 --> 00:08:56.038 line:88% position:50% align:center
+address the issue.
+
+133
+00:08:57.885 --> 00:09:03.044 line:88% position:50% align:center
+To summarise: administrators create projects
+with accurate references and budgets,
+
+134
+00:09:03.054 --> 00:09:07.895 line:88% position:50% align:center
+add team leaders with their own credentials,
+and assign responsibility clearly.
+
+135
+00:09:08.919 --> 00:09:12.828 line:88% position:50% align:center
+Each assignment notifies the team
+leader, each change is recorded,
+
+136
+00:09:12.838 --> 00:09:17.314 line:88% position:50% align:center
+and each project follows a clear path
+from creation to approved completion.
+
+137
+00:09:18.352 --> 00:09:20.972 line:88% position:50% align:center
+In the next lesson, we'll
+move into the field,
+
+138
+00:09:20.982 --> 00:09:25.979 line:88% position:50% align:center
+and see how team leaders record casual
+workers and submit their daily reports.
+
+139
+00:09:28.919 --> 00:09:32.939 line:88% position:50% align:center
+This training experience was
+produced by KEYPOLE TECHNOLOGIES.

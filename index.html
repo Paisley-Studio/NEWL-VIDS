@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1e6b3a">
+<title>NEWL AFRICA · Digital System Training Centre</title>
+<meta name="description" content="Official training programme for the NEWL AFRICA project management platform — six narrated lessons for Board members, project owners, administrators and team leaders.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/learning-centre.css">
+</head>
+<body>
+<a class="skip" href="#player">Skip to the training player</a>
+
+<header class="topnav">
+  <div class="wrap topnav-inner">
+    <a class="brand" href="#top" aria-label="NEWL AFRICA Training Centre home">
+      <span class="mark"><i class="fas fa-tower-cell"></i></span>
+      <span><b>NEWL AFRICA</b><small>DIGITAL SYSTEM TRAINING CENTRE</small></span>
+    </a>
+    <nav class="links" aria-label="Sections">
+      <a href="#player">Player</a>
+      <a href="#lessons">Lessons</a>
+      <a href="#resources">Resources</a>
+    </nav>
+    <div class="overall" title="Your training progress">
+      <span class="overall-text"><b id="overallDone">0</b> / 6 complete</span>
+      <span class="overall-bar"><span id="overallFill"></span></span>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div class="hero-card">
+      <div class="hero-copy">
+        <span class="hash"># Official training programme</span>
+        <h1>NEWL AFRICA</h1>
+        <p class="hero-sub">DIGITAL SYSTEM TRAINING CENTRE</p>
+        <p class="hero-intro">Welcome to the NEWL AFRICA Digital System Training Centre. This learning experience has been designed to help Board members, project owners, administrators and team leaders understand and confidently use the organisation's project management platform.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" id="heroStart" href="#player"><i class="fas fa-play"></i> <span>Start Lesson 01</span></a>
+          <a class="btn btn-outline" href="#lessons"><i class="fas fa-list"></i> Browse all lessons</a>
+        </div>
+        <ul class="hero-stats" aria-label="Programme at a glance">
+          <li><b>6</b><span>narrated lessons</span></li>
+          <li><b id="totalMinutes">—</b><span>minutes in total</span></li>
+          <li><b>EN</b><span>subtitles on every lesson</span></li>
+        </ul>
+      </div>
+      <div class="hero-side" aria-hidden="true">
+        <div class="audience">
+          <span class="audience-title">Designed for</span>
+          <div class="aud"><i class="fas fa-building-columns"></i><span><b>Board members</b> &amp; project owners</span></div>
+          <div class="aud"><i class="fas fa-user-shield"></i><span><b>Administrators</b></span></div>
+          <div class="aud"><i class="fas fa-user-tie"></i><span><b>Team leaders</b> &amp; project managers</span></div>
+        </div>
+        <div class="tagline"><i class="fas fa-tower-cell"></i> Projects · Teams · Daily Logs · Financials — unified</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAYER -->
+  <section class="wrap section" id="player" aria-labelledby="nowTitle">
+    <div class="section-head">
+      <div>
+        <span class="hash" id="nowHash"># Now playing</span>
+        <h2 id="nowTitle">Loading lessons…</h2>
+        <div class="sub" id="nowTheme"></div>
+      </div>
+      <div class="lesson-switch">
+        <button class="btn btn-outline btn-sm" id="prevLesson" aria-label="Previous lesson"><i class="fas fa-arrow-left"></i> Previous</button>
+        <button class="btn btn-outline btn-sm" id="nextLesson" aria-label="Next lesson">Next <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <div class="player-layout">
+      <div class="player-card">
+        <div class="player" id="playerBox">
+          <video id="video" preload="metadata" playsinline></video>
+          <div class="player-state" id="playerState" hidden>
+            <div class="state-inner">
+              <i class="fas fa-film"></i>
+              <h3 id="stateTitle">Video not yet published</h3>
+              <p id="stateText">This lesson's video has not been rendered or uploaded to the configured hosting location yet. The full narration script and subtitles are available below.</p>
+              <div class="state-actions" id="stateActions"></div>
+            </div>
+          </div>
+          <button class="big-play" id="bigPlay" aria-label="Play"><i class="fas fa-play"></i></button>
+          <div class="resume" id="resumeBox" hidden>
+            <span>Continue from <b id="resumeAt">0:00</b>?</span>
+            <button class="btn btn-sm btn-primary" id="resumeYes">Resume</button>
+            <button class="btn btn-sm btn-ghost" id="resumeNo">Start over</button>
+          </div>
+          <div class="controls" id="controls">
+            <div class="scrub" id="scrub" role="slider" aria-label="Seek" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <div class="scrub-buffer" id="scrubBuffer"></div>
+              <div class="scrub-fill" id="scrubFill"></div>
+              <div class="scrub-markers" id="scrubMarkers"></div>
+              <div class="scrub-tip" id="scrubTip" hidden></div>
+            </div>
+            <div class="ctrl-row">
+              <button class="ic" id="playBtn" aria-label="Play"><i class="fas fa-play"></i></button>
+              <button class="ic" id="back10" aria-label="Back 10 seconds"><i class="fas fa-rotate-left"></i></button>
+              <button class="ic" id="fwd10" aria-label="Forward 10 seconds"><i class="fas fa-rotate-right"></i></button>
+              <button class="ic" id="muteBtn" aria-label="Mute"><i class="fas fa-volume-high"></i></button>
+              <input type="range" id="volume" min="0" max="1" step="0.05" value="1" aria-label="Volume">
+              <span class="time"><span id="tNow">0:00</span> / <span id="tDur">0:00</span></span>
+              <span class="chapter-now" id="chapterNow"></span>
+              <span class="spacer"></span>
+              <button class="ic text" id="ccBtn" aria-label="Subtitles" aria-pressed="true"><i class="fas fa-closed-captioning"></i></button>
+              <label class="speed"><span class="sr">Playback speed</span>
+                <select id="speed" aria-label="Playback speed">
+                  <option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option>
+                </select>
+              </label>
+              <button class="ic" id="fsBtn" aria-label="Fullscreen"><i class="fas fa-expand"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="player-meta">
+          <div class="meta-left">
+            <span class="badge" id="lessonBadge">Lesson 01</span>
+            <span class="meta-duration"><i class="far fa-clock"></i> <span id="metaDuration">—</span></span>
+            <span class="meta-status" id="metaStatus"></span>
+          </div>
+          <div class="meta-right">
+            <a class="btn btn-sm btn-outline" id="scriptLink" href="#"><i class="fas fa-file-lines"></i> Script</a>
+            <a class="btn btn-sm btn-outline" id="srtLink" href="#" download><i class="fas fa-closed-captioning"></i> SRT</a>
+            <button class="btn btn-sm btn-outline-primary" id="markDone"><i class="fas fa-check"></i> <span>Mark complete</span></button>
+          </div>
+        </div>
+        <div class="lesson-progress"><div class="lp-fill" id="lessonFill"></div></div>
+      </div>
+
+      <aside class="chapters-card" aria-labelledby="chapHead">
+        <h3 id="chapHead"><i class="fas fa-list-ol"></i> Chapters</h3>
+        <ol class="chapters" id="chapters"></ol>
+        <div class="objectives">
+          <h4>In this lesson you will</h4>
+          <ul id="objectives"></ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- LESSONS -->
+  <section class="wrap section" id="lessons" aria-labelledby="lessonsTitle">
+    <div class="section-head">
+      <div>
+        <span class="hash"># Programme</span>
+        <h2 id="lessonsTitle">Six lessons, one coherent programme</h2>
+        <div class="sub">Watch in order for the full picture, or jump to the lesson that matches your role.</div>
+      </div>
+    </div>
+    <div class="lesson-grid" id="lessonGrid"></div>
+  </section>
+
+  <!-- RESOURCES -->
+  <section class="wrap section" id="resources" aria-labelledby="resTitle">
+    <div class="section-head">
+      <div>
+        <span class="hash"># Learning resources</span>
+        <h2 id="resTitle">Read, download and refer back</h2>
+        <div class="sub">Everything narrated in the videos is also available as text.</div>
+      </div>
+    </div>
+    <div class="res-grid">
+      <a class="res-card" href="resources/quick-reference.html">
+        <span class="res-icon"><i class="fas fa-bolt"></i></span>
+        <b>Quick reference guide</b>
+        <span>The essential tasks for each role on one page.</span>
+      </a>
+      <div class="res-card">
+        <span class="res-icon"><i class="fas fa-file-lines"></i></span>
+        <b>Narration scripts &amp; scene plans</b>
+        <span class="res-links" id="scriptLinks"></span>
+      </div>
+      <div class="res-card">
+        <span class="res-icon"><i class="fas fa-closed-captioning"></i></span>
+        <b>Subtitles (SRT &amp; WebVTT)</b>
+        <span class="res-links" id="subtitleLinks"></span>
+      </div>
+      <a class="res-card" href="resources/application-review.html">
+        <span class="res-icon"><i class="fas fa-magnifying-glass"></i></span>
+        <b>How the training was verified</b>
+        <span>What was confirmed in the application source, and notes for the technical team.</span>
+      </a>
+      <a class="res-card" href="resources/screenshot-sequence.html">
+        <span class="res-icon"><i class="fas fa-images"></i></span>
+        <b>Screen sequence</b>
+        <span>The application screens used in the training, in workflow order.</span>
+      </a>
+      <a class="res-card" href="resources/audio-credits.html">
+        <span class="res-icon"><i class="fas fa-music"></i></span>
+        <b>Credits &amp; licences</b>
+        <span>Narration voice, original music and sound design, fonts and icons.</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-newl">
+      <span class="mark"><i class="fas fa-tower-cell"></i></span>
+      <div>
+        <b>NEWL AFRICA</b>
+        <small>Digital System Training Centre</small>
+      </div>
+    </div>
+    <div class="footer-credit">
+      <img src="public/branding/keypole-technologies-logo.png" alt="KEYPOLE TECHNOLOGIES" width="240" height="160" loading="lazy">
+      <p>Training Experience Designed &amp; Developed by <b>KEYPOLE TECHNOLOGIES</b>.</p>
+      <p class="motto">Technology. Creativity. Excellence.</p>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <span>Progress is saved in this browser only.</span>
+    <button class="linklike" id="resetProgress">Reset my progress</button>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/learning-centre.js"></script>
+</body>
+</html>

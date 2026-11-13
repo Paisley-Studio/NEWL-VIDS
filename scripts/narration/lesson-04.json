@@ -1,0 +1,220 @@
+{
+  "id": "lesson-04",
+  "number": 4,
+  "title": "Financial Management and Budget Intelligence",
+  "shortTitle": "Financial Management",
+  "theme": "Understanding project allocations, expenditure and additional funding.",
+  "accent": "#16a085",
+  "audience": ["Board members", "Project owners", "Administrators", "Team leaders"],
+  "description": "Follow the money: how budgets, expenditure and approved funds combine into the remaining balance, how to read the financial analytics, and how additional fund requests are submitted, reviewed and decided.",
+  "objectives": [
+    "Explain how the remaining balance is calculated",
+    "Read the Financials overview, charts and per-project breakdown",
+    "Record expenditure with a traceable reference",
+    "Submit a well-justified additional fund request",
+    "Approve, adjust or decline a fund request and understand its effect"
+  ],
+  "scenes": [
+    {
+      "id": "opening",
+      "kind": "opening",
+      "chapter": "Welcome",
+      "topics": ["Budgets and allocations", "Recording expenditure", "Financial analytics", "Additional fund requests"],
+      "beats": [
+        { "text": "Lesson four: financial management and budget intelligence." },
+        { "text": "In this lesson, we'll follow the money: how budgets are allocated, how spending is recorded, and how additional funds are requested, reviewed and decided." }
+      ]
+    },
+    {
+      "id": "principles",
+      "kind": "diagram",
+      "diagram": "cards",
+      "chapter": "Why financial transparency matters",
+      "data": {
+        "title": "Every shilling should be traceable",
+        "subtitle": "From the original budget, to each expense, to each request and decision",
+        "columns": 3,
+        "items": [
+          { "icon": "lock", "title": "Controlled allocations", "body": "Every project starts with a defined, allocated budget." },
+          { "icon": "receipt", "title": "Recorded expenditure", "body": "Each expense has an item, an amount, a date and a receipt reference." },
+          { "icon": "file-signature", "title": "Documented decisions", "body": "Every fund request carries a reason, an outcome, and who decided it." }
+        ]
+      },
+      "beats": [
+        { "text": "Every shilling allocated to a project should be traceable: from the original budget, to each recorded expense, to each additional request, and the decision taken on it.", "show": 0 },
+        { "text": "The platform supports that in three ways. Controlled allocations, because every project starts with a defined budget.", "show": 1, "focus": 0 },
+        { "text": "Recorded expenditure, with an item, amount, date and receipt reference.", "show": 2, "focus": 1 },
+        { "text": "And documented decisions, because every additional fund request carries a reason, an outcome, and a record of who decided it.", "show": 3, "focus": 2 }
+      ]
+    },
+    {
+      "id": "formula",
+      "kind": "diagram",
+      "diagram": "formula",
+      "chapter": "How the figures are calculated",
+      "data": {
+        "title": "How the remaining balance is calculated",
+        "subtitle": "Example: KISUMU_NITA",
+        "rows": [
+          { "label": "Allocated budget", "value": 500000, "op": "" },
+          { "label": "Direct expenditure", "value": 70000, "op": "−" },
+          { "label": "Approved additional funds", "value": 0, "op": "−" }
+        ],
+        "result": { "label": "Remaining", "value": 430000 },
+        "note": "Pending requests are shown separately and are not deducted until approved."
+      },
+      "beats": [
+        { "text": "Let's start with how the numbers fit together, using the KISUMU_NITA project as our example.", "show": 0 },
+        { "text": "The project was created with an allocated budget of KES 500,000.", "show": 1, "sfx": ["data"] },
+        { "text": "An expense of KES 70,000 was recorded for mast mounting.", "show": 2, "sfx": ["data"] },
+        { "text": "No additional funds have been approved yet, so that line is zero.", "show": 3 },
+        { "text": "That leaves a remaining balance of KES 430,000.", "show": 4, "sfx": ["success"] },
+        { "text": "An important detail: in this system, approved additional funds are counted as outflow, alongside recorded expenditure. Pending requests are shown separately, and aren't deducted until they're approved.", "show": 5 }
+      ]
+    },
+    {
+      "id": "overview",
+      "kind": "screen",
+      "chapter": "The financial overview",
+      "image": "09-financials-overview",
+      "beats": [
+        { "text": "Administrators open Financials from the sidebar.", "cam": "full", "hl": [{ "box": [39, 315, 328, 374], "label": "Financials" }], "cursor": { "to": [183, 344], "click": true } },
+        { "text": "Four headline figures summarise the whole portfolio. Total Budget is the sum of all project budgets.", "cam": [350, 110, 1908, 420], "hl": [{ "box": [374, 241, 737, 381], "label": "Total Budget" }] },
+        { "text": "Total Outflow is recorded expenditure, plus approved additional funds.", "cam": [350, 110, 1908, 420], "hl": [{ "box": [758, 241, 1121, 381], "label": "Expenditure + approved funds" }] },
+        { "text": "Remaining is what's left after all outflow. And Pending Requests shows the value of fund requests still awaiting a decision, which are not yet deducted.", "cam": [350, 110, 1908, 420], "hl": [{ "box": [1142, 241, 1505, 381], "label": "Remaining" }, { "box": [1526, 241, 1889, 381], "label": "Not yet deducted" }] },
+        { "text": "Below the figures are the analytics. Monthly Spend Trend shows recorded expenditure over the last six months, so you can see when money is being spent.", "cam": [350, 380, 1140, 862], "hl": [{ "box": [374, 404, 1121, 827], "label": "Last six months" }] },
+        { "text": "Expense Categories groups spending by the first word of each expense description. Here, the KES 70,000 for Mast Mounting appears under Mast — which is why clear, consistent expense descriptions matter.", "cam": [1120, 380, 1908, 862], "hl": [{ "box": [1142, 404, 1889, 827], "label": "Grouped by first word" }] }
+      ]
+    },
+    {
+      "id": "analytics",
+      "kind": "screen",
+      "chapter": "Reading the analytics",
+      "image": "10-financials-charts",
+      "beats": [
+        { "text": "Budget versus Outflow per Project shows, for each project, how much has gone out, in orange, and how much remains, in green.", "cam": [350, 80, 1140, 600], "hl": [{ "box": [374, 102, 1121, 578] }] },
+        { "text": "Cumulative Spend adds up recorded expenditure over time, so the line rises as each new expense is recorded.", "cam": [1120, 80, 1908, 600], "hl": [{ "box": [1142, 102, 1889, 578] }] },
+        { "text": "Top Spending Projects ranks projects by total outflow. Fund Request Status shows the value of requests that are pending, approved or rejected, and it stays empty until the first request is decided or made.", "cam": [350, 400, 1908, 870], "hl": [{ "box": [374, 603, 1121, 870], "label": "Top spending" }, { "box": [1142, 603, 1889, 870], "label": "Fund request status" }] },
+        { "text": "At the bottom, the Per-Project Breakdown table puts it all together: budget, spent, approved funds, remaining balance, and the percentage used.", "image": "11-financials-breakdown", "cam": [350, 560, 1911, 856], "hl": [{ "box": [374, 626, 1889, 830] }] },
+        { "text": "Usage above eighty per cent is shown in orange, and above one hundred per cent in red. Selecting any row opens that project's detail.", "image": "11-financials-breakdown", "cam": [350, 560, 1911, 856], "hl": [{ "box": [1735, 750, 1861, 802], "label": "Used %" }], "cursor": { "to": [480, 776] } }
+      ]
+    },
+    {
+      "id": "expenditure",
+      "kind": "replica",
+      "chapter": "Recording expenditure",
+      "state": { "role": "admin", "page": "project", "tab": "financials", "tl": "Tesh", "expense": false },
+      "beats": [
+        { "text": "Expenditure is recorded by administrators, from the Financials tab of a project.", "cam": "full", "hl": [{ "target": "tab-financials", "label": "Financials tab" }, { "target": "expense-card" }] },
+        { "text": "Select Add, then enter an item description, the amount in Kenyan shillings, the date, and a receipt or reference number.", "cam": "full", "cursor": { "to": "btn-add-expense", "click": true }, "hl": [{ "target": "btn-add-expense", "label": "Add" }] },
+        { "text": "In our example, the item is Mast Mounting, for KES 70,000.", "cam": "modal-top", "state": { "modal": "expense" }, "type": [{ "target": "f-item", "text": "Mast Mounting" }, { "target": "f-amount", "text": "70000" }] },
+        { "text": "Always include a receipt or reference, so that every entry can be traced back to its supporting document.", "cam": "modal-top", "hl": [{ "target": "f-receipt", "label": "Receipt / Reference" }], "type": [{ "target": "f-receipt", "text": "RCP-001" }] },
+        { "text": "When you select Add, the expense appears in the project's expenditure table, the remaining balance is reduced immediately, and the entry is recorded in the audit log.", "cam": "full", "state": { "modal": null, "expense": true }, "hl": [{ "target": "expense-row-0", "label": "Recorded" }], "sfx": ["success"] }
+      ]
+    },
+    {
+      "id": "request",
+      "kind": "screen",
+      "chapter": "Requesting additional funds",
+      "image": "19-team-leader-home",
+      "beats": [
+        { "text": "Now let's look at additional funding, from the team leader's side. When a project needs money beyond its allocation, the team leader opens Fund Requests and selects Request Funds.", "cam": [0, 0, 960, 700], "hl": [{ "box": [39, 320, 328, 374], "label": "Fund Requests" }], "cursor": { "to": [156, 346], "click": true } },
+        { "text": "If they manage more than one project, they first choose the project. The form then shows the project's name and SMP reference at the top.", "image": "21-fund-request-form-empty", "cam": [520, 120, 1390, 750], "hl": [{ "box": [584, 262, 1328, 336], "label": "Project" }] },
+        { "text": "Enter the amount required, in Kenyan shillings, and explain the reason. Both are required.", "image": "21-fund-request-form-empty", "cam": [520, 120, 1390, 750], "hl": [{ "box": [584, 355, 1328, 444] }, { "box": [584, 466, 1328, 602] }], "type": [{ "box": [584, 384, 1328, 444], "text": "50000" }, { "box": [584, 496, 1328, 602], "text": "We ran out on fuel", "multiline": true }] },
+        { "text": "A good reason is specific: what the money is for, why it wasn't covered by the original budget, and what will happen without it.", "image": "22-fund-request-form-filled", "cam": [520, 120, 1390, 750], "callout": { "icon": "pen-to-square", "title": "Write a specific reason", "body": "What is it for? Why wasn't it budgeted? What happens without it?", "pos": "right" } },
+        { "text": "Select Submit Request. The request is saved as pending, it's recorded in the audit log, and the administrator receives an in-app notification and an SMS.", "image": "22-fund-request-form-filled", "cam": [520, 120, 1390, 750], "hl": [{ "box": [924, 638, 1328, 697], "label": "Submit Request" }], "cursor": { "to": [1126, 667], "click": true }, "sfx": ["success", "sms"] }
+      ]
+    },
+    {
+      "id": "review",
+      "kind": "screen",
+      "chapter": "Reviewing a request",
+      "image": "23-admin-dashboard-attention",
+      "beats": [
+        { "text": "On the administrator's side, the request is visible straight away. The dashboard shows a Needs your attention banner, the Financials menu shows a badge, and the notification bell shows an unread alert.", "cam": "full", "hl": [{ "box": [374, 241, 1889, 330], "label": "1 fund request" }, { "box": [39, 316, 328, 372] }, { "box": [1786, 35, 1870, 90] }], "sfx": ["chime"] },
+        { "text": "On the Financials page, Pending Requests now shows KES 50,000, and the request appears in the Pending Fund Requests list, with the amount, the project, the reason, who requested it, and when.", "image": "24-financials-pending-request", "cam": [350, 110, 1911, 640], "hl": [{ "box": [1526, 237, 1889, 377], "label": "KES 50,000 pending" }, { "box": [390, 470, 1875, 580] }] },
+        { "text": "The administrator has two choices. Approve asks for the amount to approve. It's pre-filled with the amount requested, but it can be adjusted — for example, if only part of the request is justified.", "image": "24-financials-pending-request", "cam": [1000, 380, 1911, 640], "hl": [{ "box": [1644, 503, 1754, 546], "label": "Approve" }], "cursor": { "to": [1699, 524] } },
+        { "text": "Decline asks for an optional reason, which is shared with the team leader.", "image": "24-financials-pending-request", "cam": [1000, 380, 1911, 640], "hl": [{ "box": [1762, 503, 1862, 546], "label": "Decline" }], "cursor": { "to": [1812, 524] } },
+        { "text": "Either way, the decision is recorded with the administrator's name and the time, the audit log is updated, and the team leader receives an in-app notification and an SMS with the outcome.", "image": "24-financials-pending-request", "cam": [1000, 380, 1911, 640], "cursor": { "to": [1699, 524], "click": true }, "sfx": ["success", "sms"] },
+        { "text": "When funds are approved, the administrator also receives an SMS confirming the release.", "image": "24-financials-pending-request", "cam": "full", "callout": { "icon": "comment-sms", "title": "Release confirmation", "body": "“RELEASE CONFIRMED: KES 50,000 released to Tesh for KISUMU_NITA.”", "pos": "right" } }
+      ]
+    },
+    {
+      "id": "after",
+      "kind": "diagram",
+      "diagram": "formula",
+      "chapter": "After approval",
+      "data": {
+        "title": "The effect of approving KES 50,000",
+        "subtitle": "Example: KISUMU_NITA",
+        "rows": [
+          { "label": "Allocated budget", "value": 500000, "op": "" },
+          { "label": "Direct expenditure", "value": 70000, "op": "−" },
+          { "label": "Approved additional funds", "value": 50000, "op": "−" }
+        ],
+        "result": { "label": "Remaining", "value": 380000 },
+        "note": "Total outflow is now KES 120,000 — 24% of the budget used."
+      },
+      "beats": [
+        { "text": "Let's see the effect of approving the KES 50,000 request.", "show": 0 },
+        { "text": "The budget remains KES 500,000. Expenditure is still KES 70,000. And approved additional funds are now KES 50,000.", "show": 3, "sfx": ["data"] },
+        { "text": "So the remaining balance falls to KES 380,000.", "show": 5, "sfx": ["success"] }
+      ]
+    },
+    {
+      "id": "after-screens",
+      "kind": "screen",
+      "chapter": "After approval",
+      "image": "09-financials-overview",
+      "beats": [
+        { "text": "The Financials page confirms it. Total Outflow is now KES 120,000, Remaining is KES 380,000, and Pending Requests has returned to zero.", "image": "25-financials-after-approval", "cam": [350, 110, 1908, 420], "hl": [{ "box": [758, 241, 1121, 381], "label": "KES 120,000" }, { "box": [1142, 241, 1505, 381], "label": "KES 380,000" }, { "box": [1526, 241, 1889, 381], "label": "KES 0" }] },
+        { "text": "In the breakdown table, approved funds now show KES 50,000, and the budget used has risen from fourteen to twenty-four per cent.", "image": "27-financials-breakdown-after-approval", "cam": [350, 560, 1911, 856], "hl": [{ "box": [1314, 750, 1480, 802], "label": "Approved funds" }, { "box": [1735, 750, 1861, 802], "label": "24%" }] },
+        { "text": "And the Fund Request Status chart now shows the approved request.", "image": "26-financials-charts-after-approval", "cam": [1120, 400, 1908, 870], "hl": [{ "box": [1142, 603, 1889, 870], "label": "Approved" }] }
+      ]
+    },
+    {
+      "id": "interpret",
+      "kind": "diagram",
+      "diagram": "cards",
+      "chapter": "Using financial information responsibly",
+      "data": {
+        "title": "Key indicators for oversight",
+        "subtitle": "Figures summarise what was recorded — they do not independently verify spending",
+        "columns": 3,
+        "items": [
+          { "icon": "scale-balanced", "title": "Remaining balance", "body": "What is left after expenditure and approved funds." },
+          { "icon": "percent", "title": "Budget used", "body": "Watch projects approaching or exceeding 100%." },
+          { "icon": "hand-holding-dollar", "title": "Additional requests", "body": "Their size, frequency, reasons and decisions." }
+        ],
+        "footer": { "icon": "receipt", "text": "Clear descriptions · receipt references · specific reasons · prompt decisions" }
+      },
+      "beats": [
+        { "text": "A final word on interpretation. The charts and figures are only as accurate as the information entered. They summarise recorded budgets, expenses and decisions. They don't independently verify that money was spent as described.", "show": 0 },
+        { "text": "That's why the supporting habits matter: clear descriptions, receipt references, specific reasons for requests, and prompt decisions.", "show": 0, "footer": true },
+        { "text": "For the Board and project owners, the key indicators to watch are the remaining balance, the percentage of budget used, and the size and frequency of additional fund requests.", "show": 3, "footer": true }
+      ]
+    },
+    {
+      "id": "closing",
+      "kind": "closing",
+      "chapter": "Summary",
+      "takeaways": [
+        "Remaining = budget − expenditure − approved additional funds",
+        "Pending requests are shown separately until decided",
+        "Every request has a reason; every decision is notified and recorded"
+      ],
+      "next": "Next: Lesson 05 — Notifications, Communication and Accountability",
+      "beats": [
+        { "text": "To summarise: every project begins with an allocated budget. Expenditure and approved additional funds are both deducted from it, while pending requests are shown separately until a decision is made.", "show": 2 },
+        { "text": "Team leaders request funds with a clear reason. Administrators approve, adjust or decline. And every decision is notified and recorded.", "show": 3 },
+        { "text": "In the next lesson, we'll look more closely at notifications, SMS messaging, and the audit trail.", "show": 3, "next": true }
+      ]
+    },
+    {
+      "id": "credits",
+      "kind": "credits",
+      "chapter": "Credits",
+      "beats": [{ "text": "This training experience was produced by KEYPOLE TECHNOLOGIES." }]
+    }
+  ]
+}

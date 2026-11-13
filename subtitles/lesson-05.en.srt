@@ -1,0 +1,446 @@
+1
+00:00:04,652 --> 00:00:09,492
+Lesson five: notifications,
+communication and accountability.
+
+2
+00:00:10,519 --> 00:00:14,454
+In this lesson, we'll see how the
+platform keeps people informed,
+
+3
+00:00:14,464 --> 00:00:20,229
+how SMS messages are sent, and how the
+audit log keeps a lasting trail of actions.
+
+4
+00:00:22,185 --> 00:00:25,007
+The platform communicates in two ways.
+
+5
+00:00:26,052 --> 00:00:29,141
+In-app notifications
+appear inside the platform,
+
+6
+00:00:29,151 --> 00:00:31,036
+in the notification centre.
+
+7
+00:00:31,536 --> 00:00:36,884
+Each one is addressed to a specific person, and
+it's stored in the database until it's read.
+
+8
+00:00:37,919 --> 00:00:42,688
+SMS messages are sent to mobile phones, so
+people are informed even when they aren't
+
+9
+00:00:42,698 --> 00:00:43,798
+signed in.
+
+10
+00:00:44,752 --> 00:00:49,189
+Some events use both channels,
+and some use SMS only.
+
+11
+00:00:49,689 --> 00:00:51,170
+Let's look at each.
+
+12
+00:00:52,685 --> 00:00:58,293
+Open Notifications from the sidebar, or
+select the bell icon at the top of any page.
+
+13
+00:00:58,794 --> 00:01:02,658
+When you have unread notifications,
+the bell shows a count.
+
+14
+00:01:03,719 --> 00:01:07,003
+Each notification has a
+title, a short message,
+
+15
+00:01:07,013 --> 00:01:08,455
+and when it arrived.
+
+16
+00:01:08,956 --> 00:01:13,262
+Unread notifications are marked with
+a green bar along the left edge.
+
+17
+00:01:14,319 --> 00:01:18,658
+Here, the administrator has received
+alerts for additional fund requests,
+
+18
+00:01:18,668 --> 00:01:20,878
+and for submitted daily logs.
+
+19
+00:01:21,919 --> 00:01:26,434
+Selecting a notification marks it as
+read and opens the related project.
+
+20
+00:01:26,934 --> 00:01:30,525
+You can also mark all your
+notifications as read at once.
+
+21
+00:01:32,052 --> 00:01:35,225
+Here's a map of the events
+that trigger communication.
+
+22
+00:01:36,285 --> 00:01:39,634
+When a team leader is created,
+assigned to a project,
+
+23
+00:01:39,644 --> 00:01:42,486
+or removed from one through
+the project's edit form,
+
+24
+00:01:42,496 --> 00:01:44,445
+they receive an SMS.
+
+25
+00:01:44,946 --> 00:01:48,171
+The welcome message includes
+their sign-in details.
+
+26
+00:01:49,219 --> 00:01:54,020
+Direct messages from an administrator
+arrive both in the app and by SMS.
+
+27
+00:01:55,052 --> 00:01:59,378
+When a casual worker is added or removed,
+the worker and the administrator are
+
+28
+00:01:59,388 --> 00:02:01,337
+informed by SMS.
+
+29
+00:02:02,385 --> 00:02:06,125
+When a team leader submits
+a daily log, requests funds,
+
+30
+00:02:06,135 --> 00:02:12,186
+or marks a project complete, the administrator
+receives an in-app notification and an SMS.
+
+31
+00:02:13,219 --> 00:02:16,425
+And when the administrator
+approves or declines funds,
+
+32
+00:02:16,435 --> 00:02:21,471
+or approves or returns a project, the
+team leader is notified both ways.
+
+33
+00:02:23,119 --> 00:02:27,510
+When an event triggers an SMS, the
+platform prepares a short message,
+
+34
+00:02:27,520 --> 00:02:31,110
+and converts the phone number to
+the international Kenyan format.
+
+35
+00:02:32,152 --> 00:02:35,111
+It then sends the message
+to a Cloudflare Worker:
+
+36
+00:02:35,121 --> 00:02:40,664
+a small, secure web service that sits
+between the platform and the SMS provider.
+
+37
+00:02:41,719 --> 00:02:46,175
+The Worker passes the message
+to Mobilesasa, the SMS gateway,
+
+38
+00:02:46,185 --> 00:02:50,531
+which delivers it to the recipient's
+phone using the configured sender ID.
+
+39
+00:02:51,585 --> 00:02:55,872
+If the phone number is missing or
+invalid, or the service can't be reached,
+
+40
+00:02:55,882 --> 00:02:59,420
+the message is marked as failed
+rather than silently ignored.
+
+41
+00:03:00,919 --> 00:03:04,392
+Administrators configure SMS under Settings.
+
+42
+00:03:04,893 --> 00:03:09,414
+The SMS Notifications panel shows
+whether the system is in Live mode,
+
+43
+00:03:09,424 --> 00:03:10,996
+or in Dry-run mode.
+
+44
+00:03:12,019 --> 00:03:15,486
+The Worker URL is the address
+of the Cloudflare Worker,
+
+45
+00:03:15,496 --> 00:03:19,450
+and the Sender ID is the name that
+appears on recipients' phones.
+
+46
+00:03:19,951 --> 00:03:22,030
+These are technical settings.
+
+47
+00:03:22,529 --> 00:03:26,373
+We've hidden the address here, and they
+should only be changed on the advice of your
+
+48
+00:03:26,383 --> 00:03:27,695
+technical team.
+
+49
+00:03:28,752 --> 00:03:31,678
+Dry-run mode is a safe testing switch.
+
+50
+00:03:32,179 --> 00:03:36,335
+When it's on, messages are recorded
+in the platform's SMS list,
+
+51
+00:03:36,345 --> 00:03:38,217
+but they're not actually sent.
+
+52
+00:03:39,619 --> 00:03:44,843
+Under Auto-fire per event, each type of
+automatic SMS can be switched on or off
+
+53
+00:03:44,853 --> 00:03:49,648
+individually — for example, notifying
+a team leader of a project assignment,
+
+54
+00:03:49,658 --> 00:03:52,754
+or notifying the administrator
+of each daily log.
+
+55
+00:03:53,819 --> 00:03:57,123
+These switches control SMS messages only.
+
+56
+00:03:57,623 --> 00:04:00,419
+In-app notifications are still created.
+
+57
+00:04:01,452 --> 00:04:06,260
+One important detail: these SMS preferences
+are saved in the web browser you're
+
+58
+00:04:06,270 --> 00:04:11,197
+using. If an administrator signs
+in on another computer or browser,
+
+59
+00:04:11,207 --> 00:04:13,768
+the settings there need
+to be checked separately.
+
+60
+00:04:14,819 --> 00:04:20,043
+Below the switches, Save keeps your
+changes to the Worker URL and Sender ID,
+
+61
+00:04:20,053 --> 00:04:24,685
+and Test SMS sends a test message to
+confirm that everything is working.
+
+62
+00:04:25,752 --> 00:04:29,700
+The Recent SMS list then shows
+each message's recipient,
+
+63
+00:04:29,710 --> 00:04:34,147
+content and status:
+sent, failed, or dry run.
+
+64
+00:04:34,647 --> 00:04:38,303
+It covers messages sent from the
+current browser session only.
+
+65
+00:04:39,719 --> 00:04:42,034
+Now let's turn to accountability.
+
+66
+00:04:42,534 --> 00:04:47,433
+The Audit Log, available to administrators,
+records the important actions taken in
+
+67
+00:04:47,443 --> 00:04:48,543
+the system.
+
+68
+00:04:49,519 --> 00:04:53,038
+Each entry shows when the action
+happened, who performed it,
+
+69
+00:04:53,048 --> 00:04:56,866
+what the action was, and the
+details — such as an amount,
+
+70
+00:04:56,876 --> 00:04:58,943
+a project, or a person.
+
+71
+00:04:59,985 --> 00:05:04,285
+Here, we can see an expense being
+added, a project being created,
+
+72
+00:05:04,295 --> 00:05:07,840
+funds being requested and
+approved, a daily log submitted,
+
+73
+00:05:07,850 --> 00:05:09,826
+and a casual worker added.
+
+74
+00:05:10,852 --> 00:05:14,416
+Entries are written automatically
+as people use the system.
+
+75
+00:05:14,917 --> 00:05:18,123
+There's no option in the
+platform to edit or delete them,
+
+76
+00:05:18,133 --> 00:05:21,410
+and the page shows the most
+recent one hundred entries.
+
+77
+00:05:22,452 --> 00:05:27,670
+The dashboard's Recent Activity panel shows
+the latest six entries from the same log.
+
+78
+00:05:29,219 --> 00:05:33,981
+It's worth being clear about the difference
+between a notification and an audit record.
+
+79
+00:05:35,019 --> 00:05:38,401
+A notification is a message
+to a specific person.
+
+80
+00:05:38,901 --> 00:05:42,921
+Its purpose is to prompt action:
+something needs your attention.
+
+81
+00:05:43,420 --> 00:05:46,164
+Once it's read, its job is done.
+
+82
+00:05:47,219 --> 00:05:50,900
+An audit record is a lasting
+entry in the system's history.
+
+83
+00:05:51,401 --> 00:05:54,763
+Its purpose is accountability:
+it shows who did what,
+
+84
+00:05:54,773 --> 00:05:57,778
+and when, so the record
+can be reviewed later.
+
+85
+00:05:58,819 --> 00:06:02,689
+Together, they make sure that the right
+people are informed in the moment,
+
+86
+00:06:02,699 --> 00:06:06,849
+and that the organisation can always
+reconstruct what happened afterwards.
+
+87
+00:06:08,685 --> 00:06:14,704
+To recap: in-app notifications prompt
+action, SMS reaches people wherever they are,
+
+88
+00:06:14,714 --> 00:06:17,393
+and the audit log keeps a lasting record.
+
+89
+00:06:18,419 --> 00:06:22,836
+Administrators can control which automatic
+SMS messages are sent and test the
+
+90
+00:06:22,846 --> 00:06:26,391
+service safely, and everyone
+should keep phone numbers accurate,
+
+91
+00:06:26,401 --> 00:06:28,871
+so that messages reach the right people.
+
+92
+00:06:29,919 --> 00:06:34,232
+In the final lesson, we'll bring everything
+together with system administration,
+
+93
+00:06:34,242 --> 00:06:37,650
+the platform's architecture,
+and best practices.
+
+94
+00:06:40,619 --> 00:06:44,639
+This training experience was
+produced by KEYPOLE TECHNOLOGIES.

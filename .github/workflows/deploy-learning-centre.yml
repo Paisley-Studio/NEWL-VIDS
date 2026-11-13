@@ -1,0 +1,64 @@
+name: Deploy learning centre
+
+# Publishes the NEWL AFRICA Digital System Training Centre to GitHub Pages.
+# Videos are taken from the "training-videos" release (persistent storage) and
+# copied into the site when they fit GitHub Pages limits; otherwise the site is
+# configured to stream them from the release.
+# Requires: Settings → Pages → Source = "GitHub Actions".
+on:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - assets/**
+      - data/**
+      - subtitles/**
+      - resources/**
+      - public/branding/**
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Fetch published videos (if any)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p release
+          if gh release view training-videos >/dev/null 2>&1; then
+            gh release download training-videos --dir release --pattern "*.mp4" --pattern "*-poster.jpg" --clobber
+          else
+            echo "::warning::No training-videos release yet — the site will show 'not yet published' for each lesson."
+          fi
+          ls -la release
+      - name: Assemble site
+        run: |
+          node scripts/production/assemble_site.mjs --out=_site --videos=release \
+            --release-url="https://github.com/${{ github.repository }}/releases/download/training-videos"
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: _site }
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

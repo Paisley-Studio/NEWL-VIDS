@@ -1,0 +1,21 @@
+node_modules
+dist
+out
+.DS_Store
+.env
+
+# Rendered videos are build outputs — published via GitHub Releases / Pages, never committed
+videos/**/*.mp4
+videos/**/.*.raw.mp4
+videos/**/poster.jpg
+
+# The supplied originals (Images/ and Images.zip) contain passwords, phone numbers,
+# e-mail addresses, an Auth UID and the SMS Worker URL. NEVER commit them; only the
+# redacted copies in public/screenshots are published.
+Images/
+images/
+Images.zip
+my-video/
+
+# narration cache bookkeeping is committed; temporary python files are not
+__pycache__/

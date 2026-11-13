@@ -1,0 +1,443 @@
+WEBVTT
+Kind: captions
+Language: en
+
+1
+00:00:04.652 --> 00:00:09.791 line:88% position:50% align:center
+Lesson six: system administration,
+oversight and best practices.
+
+2
+00:00:10.852 --> 00:00:14.983 line:88% position:50% align:center
+In this final lesson, we'll look at
+the administrator's responsibilities,
+
+3
+00:00:14.993 --> 00:00:19.299 line:88% position:50% align:center
+how the platform is built, and the
+habits that keep its records reliable.
+
+4
+00:00:21.219 --> 00:00:24.191 line:88% position:50% align:center
+Administrators carry a
+special responsibility,
+
+5
+00:00:24.201 --> 00:00:28.403 line:88% position:50% align:center
+because they control the platform's
+structure and its financial decisions.
+
+6
+00:00:29.452 --> 00:00:33.531 line:88% position:50% align:center
+They set up projects accurately,
+with correct references and budgets,
+
+7
+00:00:33.541 --> 00:00:36.356 line:88% position:50% align:center
+and they manage team
+leaders, their credentials,
+
+8
+00:00:36.366 --> 00:00:38.315 line:88% position:50% align:center
+and their project assignments.
+
+9
+00:00:39.352 --> 00:00:42.923 line:88% position:50% align:center
+They record expenditure with
+proper descriptions and references,
+
+10
+00:00:42.933 --> 00:00:46.412 line:88% position:50% align:center
+and they review fund requests
+and completed projects promptly,
+
+11
+00:00:46.422 --> 00:00:49.049 line:88% position:50% align:center
+documenting the reasons for their decisions.
+
+12
+00:00:50.085 --> 00:00:53.851 line:88% position:50% align:center
+And they maintain the system's
+settings, review the audit log,
+
+13
+00:00:53.861 --> 00:00:56.735 line:88% position:50% align:center
+and keep the Board and
+project owners informed.
+
+14
+00:00:58.385 --> 00:01:01.324 line:88% position:50% align:center
+Access is based on the two sign-in roles.
+
+15
+00:01:02.385 --> 00:01:05.545 line:88% position:50% align:center
+Administrators see every
+area of the platform.
+
+16
+00:01:06.585 --> 00:01:10.651 line:88% position:50% align:center
+Team leaders see only their own
+projects, their casual workers,
+
+17
+00:01:10.661 --> 00:01:14.511 line:88% position:50% align:center
+their logs, their fund requests
+and their notifications.
+
+18
+00:01:15.552 --> 00:01:18.062 line:88% position:50% align:center
+Every person should have their own account.
+
+19
+00:01:18.562 --> 00:01:22.862 line:88% position:50% align:center
+Accounts should never be shared, because
+the audit log identifies people by the
+
+20
+00:01:22.872 --> 00:01:24.640 line:88% position:50% align:center
+account they signed in with.
+
+21
+00:01:25.685 --> 00:01:29.933 line:88% position:50% align:center
+When a team leader leaves the organisation,
+remove them from their projects,
+
+22
+00:01:29.943 --> 00:01:34.061 line:88% position:50% align:center
+delete their profile, and ask your technical
+administrator to remove their sign-in
+
+23
+00:01:34.071 --> 00:01:37.687 line:88% position:50% align:center
+account from Firebase, so
+that it can no longer be used.
+
+24
+00:01:39.219 --> 00:01:43.024 line:88% position:50% align:center
+The Settings page begins with
+My Profile, showing your name,
+
+25
+00:01:43.034 --> 00:01:45.609 line:88% position:50% align:center
+username, phone number and role.
+
+26
+00:01:46.109 --> 00:01:48.111 line:88% position:50% align:center
+We've hidden the phone number here.
+
+27
+00:01:49.152 --> 00:01:53.322 line:88% position:50% align:center
+Next to it, the Firebase panel
+shows the platform's project name,
+
+28
+00:01:53.332 --> 00:01:57.241 line:88% position:50% align:center
+your unique account identifier, and
+whether the connection to the database is
+
+29
+00:01:57.251 --> 00:02:01.429 line:88% position:50% align:center
+active. Treat your account
+identifier as private.
+
+30
+00:02:02.485 --> 00:02:06.179 line:88% position:50% align:center
+Team leaders see the same
+profile and connection panels.
+
+31
+00:02:06.680 --> 00:02:10.908 line:88% position:50% align:center
+The SMS configuration is
+visible to administrators only.
+
+32
+00:02:12.452 --> 00:02:16.641 line:88% position:50% align:center
+Let's look, in simple terms,
+at how the platform is built.
+
+33
+00:02:17.685 --> 00:02:22.005 line:88% position:50% align:center
+The application runs in a web
+browser, on a computer or a phone.
+
+34
+00:02:22.505 --> 00:02:24.415 line:88% position:50% align:center
+There's nothing to install.
+
+35
+00:02:25.452 --> 00:02:30.351 line:88% position:50% align:center
+When someone signs in, their identity
+is checked by Firebase Authentication:
+
+36
+00:02:30.361 --> 00:02:32.714 line:88% position:50% align:center
+Google's secure sign-in service.
+
+37
+00:02:33.752 --> 00:02:36.802 line:88% position:50% align:center
+The platform's information
+is stored in Firestore,
+
+38
+00:02:36.812 --> 00:02:39.868 line:88% position:50% align:center
+a cloud database also provided by Google.
+
+39
+00:02:40.919 --> 00:02:44.399 line:88% position:50% align:center
+Firestore holds seven
+main collections: users,
+
+40
+00:02:44.409 --> 00:02:49.386 line:88% position:50% align:center
+projects, casuals, daily
+logs, budgets, notifications,
+
+41
+00:02:49.396 --> 00:02:50.864 line:88% position:50% align:center
+and the audit log.
+
+42
+00:02:51.919 --> 00:02:56.505 line:88% position:50% align:center
+For SMS, the application sends each
+message to a Cloudflare Worker,
+
+43
+00:02:56.515 --> 00:03:00.444 line:88% position:50% align:center
+which forwards it to Mobilesasa
+for delivery to mobile phones.
+
+44
+00:03:00.945 --> 00:03:04.372 line:88% position:50% align:center
+The application never
+contacts Mobilesasa directly;
+
+45
+00:03:04.382 --> 00:03:06.358 line:88% position:50% align:center
+it always goes through the Worker.
+
+46
+00:03:07.985 --> 00:03:10.455 line:88% position:50% align:center
+Each collection has a clear purpose.
+
+47
+00:03:10.956 --> 00:03:14.494 line:88% position:50% align:center
+Users holds administrator
+and team leader profiles.
+
+48
+00:03:14.992 --> 00:03:18.322 line:88% position:50% align:center
+Projects holds project
+details and assignments.
+
+49
+00:03:18.821 --> 00:03:22.879 line:88% position:50% align:center
+And casuals holds worker records,
+linked to their projects.
+
+50
+00:03:23.919 --> 00:03:26.493 line:88% position:50% align:center
+Daily logs holds field reports.
+
+51
+00:03:26.994 --> 00:03:31.534 line:88% position:50% align:center
+Budgets holds each project's expenditure
+and additional fund requests.
+
+52
+00:03:32.033 --> 00:03:36.964 line:88% position:50% align:center
+Notifications holds in-app alerts, and
+audit holds the history of actions.
+
+53
+00:03:38.619 --> 00:03:41.350 line:88% position:50% align:center
+Security is a shared responsibility.
+
+54
+00:03:41.850 --> 00:03:45.896 line:88% position:50% align:center
+The platform's protection depends
+on several things working together.
+
+55
+00:03:46.952 --> 00:03:52.482 line:88% position:50% align:center
+Correctly configured Firebase Authentication,
+so that only registered users can sign in.
+
+56
+00:03:53.519 --> 00:03:58.743 line:88% position:50% align:center
+Firestore security rules, which decide
+who can read or change each type of record
+
+57
+00:03:58.753 --> 00:04:01.510 line:88% position:50% align:center
+— not just what the
+screens choose to display.
+
+58
+00:04:02.552 --> 00:04:05.146 line:88% position:50% align:center
+Careful validation of
+the information entered,
+
+59
+00:04:05.156 --> 00:04:07.418 line:88% position:50% align:center
+and good habits from every user.
+
+60
+00:04:08.452 --> 00:04:11.547 line:88% position:50% align:center
+No system is completely immune to attack.
+
+61
+00:04:12.048 --> 00:04:15.586 line:88% position:50% align:center
+These controls reduce risk;
+they don't eliminate it.
+
+62
+00:04:16.084 --> 00:04:19.955 line:88% position:50% align:center
+So the technical team should review
+the Firestore rules and the Worker's
+
+63
+00:04:19.965 --> 00:04:21.862 line:88% position:50% align:center
+configuration regularly.
+
+64
+00:04:22.885 --> 00:04:28.162 line:88% position:50% align:center
+And passwords, configuration values and
+keys must never be shared in messages,
+
+65
+00:04:28.172 --> 00:04:30.238 line:88% position:50% align:center
+screenshots or documents.
+
+66
+00:04:31.885 --> 00:04:36.243 line:88% position:50% align:center
+Let's bring it together, with best
+practices for reliable records.
+
+67
+00:04:37.285 --> 00:04:39.782 line:88% position:50% align:center
+Enter data accurately the first time.
+
+68
+00:04:40.282 --> 00:04:44.797 line:88% position:50% align:center
+Check project references, budgets
+and phone numbers before saving.
+
+69
+00:04:45.819 --> 00:04:48.016 line:88% position:50% align:center
+Report daily and honestly.
+
+70
+00:04:48.517 --> 00:04:53.116 line:88% position:50% align:center
+A short, accurate log submitted on the
+day is worth far more than a detailed one
+
+71
+00:04:53.126 --> 00:04:55.141 line:88% position:50% align:center
+written from memory a week later.
+
+72
+00:04:56.185 --> 00:05:01.129 line:88% position:50% align:center
+Describe expenses consistently, and
+always include a receipt or reference.
+
+73
+00:05:02.152 --> 00:05:06.497 line:88% position:50% align:center
+Give clear reasons for every fund
+request, and for every decision.
+
+74
+00:05:07.552 --> 00:05:12.607 line:88% position:50% align:center
+And protect access: keep accounts
+personal, sign out on shared devices,
+
+75
+00:05:12.617 --> 00:05:15.674 line:88% position:50% align:center
+and remove access promptly
+when someone leaves.
+
+76
+00:05:17.319 --> 00:05:22.010 line:88% position:50% align:center
+For Board members and project owners, the
+platform offers a dependable basis for
+
+77
+00:05:22.020 --> 00:05:25.336 line:88% position:50% align:center
+oversight, provided you
+ask the right questions.
+
+78
+00:05:26.385 --> 00:05:31.486 line:88% position:50% align:center
+Are projects active and reporting regularly,
+or have their daily logs gone quiet?
+
+79
+00:05:32.519 --> 00:05:36.500 line:88% position:50% align:center
+How much of each budget has
+been used, and how much remains?
+
+80
+00:05:37.552 --> 00:05:41.370 line:88% position:50% align:center
+How often are additional funds
+requested, for what reasons,
+
+81
+00:05:41.380 --> 00:05:43.746 line:88% position:50% align:center
+and how were those requests decided?
+
+82
+00:05:44.785 --> 00:05:49.378 line:88% position:50% align:center
+And does the audit trail show the expected
+people taking the expected actions?
+
+83
+00:05:50.419 --> 00:05:53.404 line:88% position:50% align:center
+Administrators can walk the
+Board through the dashboard,
+
+84
+00:05:53.414 --> 00:05:58.254 line:88% position:50% align:center
+the financial overview and the audit
+log, to answer each of these questions.
+
+85
+00:06:00.085 --> 00:06:04.899 line:88% position:50% align:center
+This brings the NEWL AFRICA Digital
+System Training programme to a close.
+
+86
+00:06:05.952 --> 00:06:08.859 line:88% position:50% align:center
+You've seen how projects
+are created and assigned,
+
+87
+00:06:08.869 --> 00:06:12.466 line:88% position:50% align:center
+how field activity is reported,
+how money is allocated,
+
+88
+00:06:12.476 --> 00:06:17.010 line:88% position:50% align:center
+requested and approved, and how
+notifications and the audit log keep everyone
+
+89
+00:06:17.020 --> 00:06:18.748 line:88% position:50% align:center
+informed and accountable.
+
+90
+00:06:19.785 --> 00:06:24.729 line:88% position:50% align:center
+The platform is a powerful tool, but its
+value depends on the people who use it.
+
+91
+00:06:25.230 --> 00:06:29.497 line:88% position:50% align:center
+Use it responsibly, keep it
+accurate, and keep it transparent.
+
+92
+00:06:30.552 --> 00:06:32.723 line:88% position:50% align:center
+Thank you for completing this training.
+
+93
+00:06:35.685 --> 00:06:39.705 line:88% position:50% align:center
+This training experience was
+produced by KEYPOLE TECHNOLOGIES.

@@ -1,0 +1,199 @@
+{
+  "id": "lesson-01",
+  "number": 1,
+  "title": "Introducing the NEWL AFRICA Management System",
+  "shortTitle": "Introducing the System",
+  "theme": "Understanding the platform, its purpose and the organisational picture.",
+  "accent": "#1e6b3a",
+  "audience": ["Board members", "Project owners", "Administrators", "Team leaders"],
+  "description": "The big picture: why the platform exists, how secure sign-in works, what the dashboard tells you, how to find your way around, and who is responsible for what.",
+  "objectives": [
+    "Explain the purpose of the NEWL AFRICA management platform",
+    "Sign in securely using the correct role tab",
+    "Read the administrator dashboard and its summary figures",
+    "Navigate the main areas of the system",
+    "Describe the responsibilities of administrators and team leaders"
+  ],
+  "scenes": [
+    {
+      "id": "opening",
+      "kind": "opening",
+      "chapter": "Welcome",
+      "topics": ["Purpose of the platform", "Secure sign-in", "The dashboard", "Roles and responsibilities"],
+      "beats": [
+        { "text": "Welcome to the NEWL AFRICA Digital System Training programme." },
+        { "text": "In this first lesson, we'll look at the bigger picture: what the management platform is, why it exists, and how it supports everyone in the organisation." }
+      ]
+    },
+    {
+      "id": "why",
+      "kind": "diagram",
+      "diagram": "cards",
+      "chapter": "Why the platform exists",
+      "data": {
+        "title": "One shared source of project information",
+        "subtitle": "Instead of calls, messages and spreadsheets scattered across the organisation",
+        "columns": 4,
+        "items": [
+          { "icon": "folder", "title": "Projects", "body": "References, locations, budgets and status" },
+          { "icon": "user-tie", "title": "Teams", "body": "Team leaders and the casual workers on site" },
+          { "icon": "clipboard-list", "title": "Daily Logs", "body": "What was done, by whom, and when" },
+          { "icon": "wallet", "title": "Financials", "body": "Budgets, expenditure and fund requests" }
+        ],
+        "footer": { "icon": "tower-cell", "text": "Projects · Teams · Daily Logs · Financials — unified" }
+      },
+      "beats": [
+        { "text": "NEWL AFRICA delivers project work across many sites, with team leaders in the field and decision-makers in the office.", "show": 0 },
+        { "text": "Without a shared system, the important details — who is responsible for a project, which workers are on site, what was done today, and how much has been spent — end up scattered across phone calls, messages and spreadsheets.", "show": 4 },
+        { "text": "The NEWL AFRICA management platform brings that information together in one place. Its own tagline sums it up: projects, teams, daily logs and financials — unified.", "show": 4, "footer": true, "sfx": ["pop"] }
+      ]
+    },
+    {
+      "id": "value",
+      "kind": "diagram",
+      "diagram": "cards",
+      "chapter": "Why the platform exists",
+      "data": {
+        "title": "What the platform gives each group",
+        "columns": 3,
+        "items": [
+          { "icon": "eye", "title": "Visibility", "body": "A consolidated view of projects, budgets, spending and activity for the Board and project owners." },
+          { "icon": "sliders", "title": "Control", "body": "Administrators create projects, assign team leaders and decide on additional fund requests." },
+          { "icon": "list-check", "title": "A clear routine", "body": "Team leaders record workers on site, submit daily logs and request funds when needed." }
+        ],
+        "footer": { "icon": "clock-rotate-left", "text": "Every important action is recorded in the audit log" }
+      },
+      "beats": [
+        { "text": "For the Board and project owners, the platform provides visibility: a consolidated view of projects, budgets, spending and activity.", "show": 1, "focus": 0 },
+        { "text": "For administrators, it provides control. Projects are created, team leaders are assigned, and additional fund requests are reviewed and then approved or declined.", "show": 2, "focus": 1 },
+        { "text": "And for team leaders, it provides a clear, simple routine: record the casual workers on site, submit a daily log, and request additional funds when they are genuinely needed.", "show": 3, "focus": 2 },
+        { "text": "Every one of these actions is recorded, which creates a dependable trail of accountability.", "show": 3, "footer": true }
+      ]
+    },
+    {
+      "id": "roles",
+      "kind": "diagram",
+      "diagram": "tiers",
+      "chapter": "Who uses the system",
+      "data": {
+        "title": "How responsibility is organised",
+        "items": [
+          { "icon": "building-columns", "title": "Board members and project owners", "body": "Oversight through the administrator's dashboard, financial reports and audit trail.", "tag": "No separate sign-in role" },
+          { "icon": "user-shield", "title": "Administrator", "body": "Creates projects and budgets, manages team leaders, records expenditure, decides on fund requests and approves completed projects.", "tag": "Sign-in role" },
+          { "icon": "user-tie", "title": "Team Leader", "body": "Works on assigned projects: adds casual workers, submits daily logs, requests funds and marks projects complete.", "tag": "Sign-in role" },
+          { "icon": "users", "title": "Casual workers", "body": "Recorded by their team leader. They do not sign in, but can receive SMS messages.", "tag": "Recorded, no sign-in" }
+        ]
+      },
+      "beats": [
+        { "text": "It's important to understand how the system is organised. The platform has two sign-in roles: the Administrator and the Team Leader.", "show": [1, 2] },
+        { "text": "Administrators manage the whole platform. They create projects, set budgets, add and assign team leaders, record expenditure, review fund requests, approve completed projects and configure SMS notifications.", "show": [1, 2], "focus": 1 },
+        { "text": "Team leaders work on the projects assigned to them. They add casual workers, submit daily logs, request additional funds, and mark their projects as complete when the work is done.", "show": [1, 2], "focus": 2 },
+        { "text": "Casual workers do not sign in. They are recorded by their team leader, and they can receive an SMS when they are added to, or removed from, a project.", "show": [1, 2, 3], "focus": 3 },
+        { "text": "Board members and project owners do not have a separate role in the current system. Their oversight comes through the administrator's dashboard, the financial reports and the audit trail, which administrators can present and walk through with them.", "show": [0, 1, 2, 3], "focus": 0 }
+      ]
+    },
+    {
+      "id": "login",
+      "kind": "screen",
+      "chapter": "Secure sign-in",
+      "image": "01-admin-login",
+      "beats": [
+        { "text": "Let's open the application. Everything begins at the sign-in screen.", "cam": "full" },
+        { "text": "At the top, you'll see the NEWL AFRICA identity, followed by two tabs: Admin and Team Leader. Choose the tab that matches your role.", "cam": [560, 120, 1350, 760], "hl": [{ "box": [709, 317, 1203, 381], "label": "Choose your role" }] },
+        { "text": "Team leaders select the Team Leader tab. Administrators stay on the Admin tab.", "image": "18-team-leader-login", "cam": [560, 120, 1350, 760], "hl": [{ "box": [955, 322, 1200, 376], "label": "Team Leader tab" }], "cursor": { "to": [1078, 349], "click": true } },
+        { "text": "Enter your username and password. Team leader usernames are created by the administrator, and the system turns them into a sign-in address ending in @newl.africa. You can also type a full email address.", "image": "01-admin-login", "cam": [560, 120, 1350, 760], "hl": [{ "box": [709, 405, 1203, 612], "label": "Username and password" }], "cursor": { "to": [960, 470] } },
+        { "text": "When you select Sign In, the platform checks your credentials with Firebase Authentication — a secure sign-in service provided by Google.", "cam": [560, 120, 1350, 760], "hl": [{ "box": [709, 631, 1203, 690], "label": "Sign In" }], "cursor": { "to": [956, 660], "click": true }, "sfx": ["login"] },
+        { "text": "It then confirms that your account profile matches the tab you selected. An administrator can't sign in through the Team Leader tab, and a team leader can't sign in as an administrator.", "cam": [560, 120, 1350, 760], "callout": { "icon": "shield-halved", "title": "Role check", "body": "If the account's role doesn't match the selected tab, the sign-in is refused and the session is closed.", "pos": "right" } },
+        { "text": "Keep your password private, and never share your sign-in details with anyone. If you're using a shared computer, always sign out when you've finished.", "cam": "full" }
+      ]
+    },
+    {
+      "id": "dashboard",
+      "kind": "screen",
+      "chapter": "The administrator dashboard",
+      "image": "02-admin-dashboard",
+      "beats": [
+        { "text": "After signing in, administrators arrive on the Home dashboard — the platform's control centre.", "cam": "full", "sfx": ["whoosh-soft"] },
+        { "text": "At the top, a short summary tells you how many projects are active, how many team leaders are registered, and how many casual workers are on duty.", "cam": [340, 100, 1300, 400], "hl": [{ "box": [362, 126, 805, 216], "label": "Summary" }] },
+        { "text": "Below it, four summary cards give you the essential figures at a glance. Projects shows the total number of projects, and how many are active.", "cam": [340, 200, 1910, 420], "hl": [{ "box": [368, 237, 731, 377], "label": "Projects" }] },
+        { "text": "Total Budget is the combined budget of every project, with the amount spent shown underneath.", "cam": [340, 200, 1910, 420], "hl": [{ "box": [752, 237, 1115, 377], "label": "Total Budget" }] },
+        { "text": "Remaining is what's left after all outflow — that is, recorded expenditure and approved additional funds. And Unread shows how many of your notifications you haven't opened yet.", "cam": [340, 200, 1910, 420], "hl": [{ "box": [1136, 237, 1499, 377], "label": "Remaining" }, { "box": [1520, 237, 1883, 377], "label": "Unread" }] },
+        { "text": "On the left, Active Projects lists projects that are in progress or awaiting approval, with their SMP reference, team leader, status, a progress bar and the remaining budget.", "cam": [350, 380, 1130, 861], "hl": [{ "box": [380, 488, 1100, 600], "label": "Active project" }] },
+        { "text": "On the right, Recent Activity shows the latest actions taken in the system: who did what, and when.", "cam": [1120, 380, 1903, 861], "hl": [{ "box": [1150, 488, 1870, 861], "label": "Recent Activity" }] },
+        { "text": "And when something needs your decision — such as a pending fund request, or a project awaiting approval — a Needs your attention banner appears, with a Review button that takes you straight to it.", "image": "23-admin-dashboard-attention", "cam": [340, 100, 1911, 520], "hl": [{ "box": [374, 241, 1889, 330], "label": "Needs your attention" }], "cursor": { "to": [1817, 285], "click": false }, "sfx": ["chime"] }
+      ]
+    },
+    {
+      "id": "navigation",
+      "kind": "screen",
+      "chapter": "Finding your way around",
+      "image": "02-admin-dashboard",
+      "beats": [
+        { "text": "The sidebar on the left is how you move around the platform. Administrators see nine areas.", "cam": [0, 0, 760, 800], "hl": [{ "box": [30, 122, 325, 682], "label": "Main navigation" }] },
+        { "text": "Home is the dashboard you've just seen, and Projects holds the full project portfolio.", "cam": [0, 0, 760, 800], "hl": [{ "box": [33, 125, 322, 183] }, { "box": [33, 190, 322, 242] }] },
+        { "text": "Team Leaders is where field leaders are added, assigned and supported. Financials brings together budgets, expenditure and fund requests.", "cam": [0, 0, 760, 800], "hl": [{ "box": [33, 252, 322, 304] }, { "box": [33, 314, 322, 366] }] },
+        { "text": "Daily Logs shows every field report, and All Casuals lists the casual workers recorded on each project.", "cam": [0, 0, 760, 800], "hl": [{ "box": [33, 376, 322, 428] }, { "box": [33, 438, 322, 490] }] },
+        { "text": "Notifications holds your in-app alerts, the Audit Log keeps a history of actions, and Settings contains your profile and the SMS configuration.", "cam": [0, 0, 760, 800], "hl": [{ "box": [33, 500, 322, 552] }, { "box": [33, 562, 322, 614] }, { "box": [33, 624, 322, 676] }] },
+        { "text": "At the top of every page, the search bar lets you quickly find projects by name, SMP, PO number or module package. The bell icon opens your notifications.", "cam": [300, 0, 1903, 230], "hl": [{ "box": [387, 30, 1797, 88], "label": "Search projects" }, { "box": [1811, 33, 1864, 85], "label": "Notifications" }] },
+        { "text": "Your name and role appear at the bottom of the sidebar, next to the sign-out button.", "cam": [0, 420, 760, 861], "hl": [{ "box": [28, 708, 328, 770], "label": "Your account and sign-out" }] }
+      ]
+    },
+    {
+      "id": "tl-view",
+      "kind": "screen",
+      "chapter": "The team leader's view",
+      "image": "19-team-leader-home",
+      "beats": [
+        { "text": "Team leaders see a simpler, focused workspace.", "cam": "full" },
+        { "text": "Their sidebar contains six areas: My Projects, My Casuals, Daily Logs, Fund Requests, Notifications and Settings.", "cam": [0, 0, 760, 700], "hl": [{ "box": [36, 128, 331, 500], "label": "Team leader navigation" }] },
+        { "text": "Their home page shows only the projects assigned to them, along with the casual workers on their sites, the logs they've submitted, and their unread notifications.", "cam": [350, 120, 1909, 660], "hl": [{ "box": [374, 243, 1889, 358] }, { "box": [374, 454, 1121, 639], "label": "Assigned project" }] },
+        { "text": "Team leaders don't see other team leaders' projects, the organisation-wide financial overview, or the audit log. Those views are reserved for administrators.", "cam": "full", "callout": { "icon": "lock", "title": "Administrator-only views", "body": "Team Leaders, Financials overview, All Casuals across projects, Audit Log and SMS settings.", "pos": "right" } }
+      ]
+    },
+    {
+      "id": "flow",
+      "kind": "diagram",
+      "diagram": "flow",
+      "chapter": "How information moves",
+      "data": {
+        "title": "How information moves through the platform",
+        "nodes": [
+          { "icon": "user-shield", "title": "Administrator", "body": "Creates the project, sets the budget, assigns a team leader" },
+          { "icon": "user-tie", "title": "Team leader", "body": "Receives an SMS, records workers, submits daily logs" },
+          { "icon": "database", "title": "Central database", "body": "Every record is stored in Firestore" },
+          { "icon": "chart-line", "title": "Oversight", "body": "Notifications, dashboard, financials and audit log" },
+          { "icon": "building-columns", "title": "Board and owners", "body": "Informed through the administrator" }
+        ]
+      },
+      "beats": [
+        { "text": "Here's how information moves through the platform.", "show": 0 },
+        { "text": "An administrator creates a project, sets its budget and assigns a team leader.", "show": 1, "focus": 0 },
+        { "text": "The team leader receives an SMS, signs in, records the casual workers on site, and submits daily logs.", "show": 2, "focus": 1, "sfx": ["sms"] },
+        { "text": "Every submission is stored centrally in a Firestore database. Administrators receive notifications, and the records become available on the dashboard, in the financial reports and in the audit log.", "show": 4, "focus": 3, "sfx": ["data"] },
+        { "text": "The Board and project owners can then receive accurate, up-to-date information through the administrator, without chasing updates from the field.", "show": 5, "focus": 4 }
+      ]
+    },
+    {
+      "id": "closing",
+      "kind": "closing",
+      "chapter": "Summary",
+      "takeaways": [
+        "One secure place for projects, teams, daily logs and financials",
+        "Two sign-in roles: Administrator and Team Leader",
+        "Every important action leaves a record"
+      ],
+      "next": "Next: Lesson 02 — Project and Team Management",
+      "beats": [
+        { "text": "Let's recap. The NEWL AFRICA platform brings projects, teams, daily logs and financials together in one secure place.", "show": 1 },
+        { "text": "There are two sign-in roles, Administrator and Team Leader, and every important action leaves a record.", "show": 3 },
+        { "text": "In the next lesson, we'll create a project, add a team leader and assign responsibility. Thank you for watching.", "show": 3, "next": true }
+      ]
+    },
+    {
+      "id": "credits",
+      "kind": "credits",
+      "chapter": "Credits",
+      "beats": [{ "text": "This training experience was produced by KEYPOLE TECHNOLOGIES." }]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "name": "newl-africa-training",
+  "version": "1.0.0",
+  "description": "NEWL AFRICA Digital System Training — six narrated lessons, automated Remotion production pipeline and learning centre. Production: KEYPOLE TECHNOLOGIES.",
+  "repository": {},
+  "license": "UNLICENSED",
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24"
+  },
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.3.1",
+    "@fortawesome/free-solid-svg-icons": "^7.3.1",
+    "@remotion/cli": "4.0.543",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.543"
+  },
+  "devDependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/quicksand": "^5.3.0",
+    "@remotion/eslint-config-flat": "4.0.543",
+    "@types/react": "19.3.0",
+    "@types/web": "0.0.166",
+    "eslint": "10.12.0",
+    "prettier": "3.8.1",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "dev": "remotion studio",
+    "screenshots": "python -I scripts/production/sanitize_screenshots.py",
+    "narration": "python -I scripts/production/generate_narration.py",
+    "audio": "python -I scripts/production/generate_audio_assets.py",
+    "frame-assets": "python -I scripts/production/build_frame_assets.py",
+    "export": "node scripts/production/export.mjs && node scripts/production/build_resources.mjs",
+    "verify": "node scripts/production/verify.mjs",
+    "render": "node scripts/production/render.mjs",
+    "render:preview": "node scripts/production/render.mjs --scale=0.5 --crf=26",
+    "posters": "node scripts/production/stills.mjs --posters",
+    "serve": "python -m http.server 8080",
+    "lint": "tsc --noEmit -p .",
+    "docs:pdf": "node scripts/production/build_pdf.mjs"
+  },
+  "allowScripts": {
+    "esbuild": false
+  }
+}

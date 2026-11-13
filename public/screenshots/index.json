@@ -1,0 +1,272 @@
+[
+  {
+    "id": "01-admin-login",
+    "file": "screenshots/01-admin-login.png",
+    "title": "Login screen \u00e2\u20ac\u201d Admin tab",
+    "originalSize": [
+      1909,
+      861
+    ],
+    "redacted": 1
+  },
+  {
+    "id": "02-admin-dashboard",
+    "file": "screenshots/02-admin-dashboard.png",
+    "title": "Administrator dashboard (Home)",
+    "originalSize": [
+      1903,
+      861
+    ],
+    "redacted": 0
+  },
+  {
+    "id": "03-new-project-form-top",
+    "file": "screenshots/03-new-project-form-top.png",
+    "title": "New Project form \u00e2\u20ac\u201d upper fields",
+    "originalSize": [
+      1905,
+      880
+    ],
+    "redacted": 0
+  },
+  {
+    "id": "04-new-project-form-bottom",
+    "file": "screenshots/04-new-project-form-bottom.png",
+    "title": "New Project form \u00e2\u20ac\u201d lower fields",
+    "originalSize": [
+      1900,
+      870
+    ],
+    "redacted": 0
+  },
+  {
+    "id": "05-new-team-leader-form",
+    "file": "screenshots/05-new-team-leader-form.png",
+    "title": "New Team Leader form",
+    "originalSize": [
+      1902,
+      865
+    ],
+    "redacted": 0
+  },
+  {
+    "id": "06-projects-list",
+    "file": "screenshots/06-projects-list.png",
+    "title": "Projects portfolio",
+    "originalSize": [
+      1903,
+      865
+    ],
+    "redacted": 0
+  },
+  {
+    "id": "07-projects-search",
+    "file": "screenshots/07-projects-search.png",
+    "title": "Projects \u00e2\u20ac\u201d global search",
+    "originalSize": [
+      1911,
+      862
+    ],
+    "redacted": 0
+  },
+  {
+    "id": "08-team-leaders",
+    "file": "screenshots/08-team-leaders.png",
+    "title": "Team Leaders directory",
+    "originalSize": [
+      1915,
+      859
+    ],
+    "redacted": 4
+  },
+  {
+    "id": "09-financials-overview",
+    "file": "screenshots/09-financials-overview.png",
+    "title": "Financials \u00e2\u20ac\u201d overview (before request)",
+    "originalSize": [
+      1908,
+      862
+    ],
+    "redacted": 0
+  },
+  {
+    "id": "10-financials-charts",
+    "file": "screenshots/10-financials-charts.png",
+    "title": "Financials \u00e2\u20ac\u201d analytics charts",
+    "originalSize": [
+      1908,
+      870
+    ],
+    "redacted": 0
+  },
+  {
+    "id": "11-financials-breakdown",
+    "file": "screenshots/11-financials-breakdown.png",
+    "title": "Financials \u00e2\u20ac\u201d per-project breakdown",
+    "originalSize": [
+      1911,
+      856
+    ],
+    "redacted": 0
+  },
+  {
+    "id": "12-daily-logs-admin",
+    "file": "screenshots/12-daily-logs-admin.png",
+    "title": "Daily Logs \u00e2\u20ac\u201d administrator view",
+    "originalSize": [
+      1906,
+      861
+    ],
+    "redacted": 0
+  },
+  {
+    "id": "13-all-casuals-admin",
+    "file": "screenshots/13-all-casuals-admin.png",
+    "title": "All Casuals \u00e2\u20ac\u201d administrator view",
+    "originalSize": [
+      1911,
+      871
+    ],
+    "redacted": 0
+  },
+  {
+    "id": "14-notifications",
+    "file": "screenshots/14-notifications.png",
+    "title": "Notifications centre",
+    "originalSize": [
+      1914,
+      871
+    ],
+    "redacted": 0
+  },
+  {
+    "id": "15-audit-log",
+    "file": "screenshots/15-audit-log.png",
+    "title": "Audit Log",
+    "originalSize": [
+      1909,
+      853
+    ],
+    "redacted": 0
+  },
+  {
+    "id": "16-settings-profile-sms",
+    "file": "screenshots/16-settings-profile-sms.png",
+    "title": "Settings \u00e2\u20ac\u201d profile, Firebase, SMS",
+    "originalSize": [
+      1908,
+      868
+    ],
+    "redacted": 3
+  },
+  {
+    "id": "17-settings-sms-events",
+    "file": "screenshots/17-settings-sms-events.png",
+    "title": "Settings \u00e2\u20ac\u201d SMS auto-fire per event",
+    "originalSize": [
+      1912,
+      874
+    ],
+    "redacted": 0
+  },
+  {
+    "id": "18-team-leader-login",
+    "file": "screenshots/18-team-leader-login.png",
+    "title": "Login screen \u00e2\u20ac\u201d Team Leader tab",
+    "originalSize": [
+      1911,
+      870
+    ],
+    "redacted": 1
+  },
+  {
+    "id": "19-team-leader-home",
+    "file": "screenshots/19-team-leader-home.png",
+    "title": "Team Leader workspace (My Projects)",
+    "originalSize": [
+      1909,
+      868
+    ],
+    "redacted": 0
+  },
+  {
+    "id": "20-add-casual-form",
+    "file": "screenshots/20-add-casual-form.png",
+    "title": "Add Casual form",
+    "originalSize": [
+      1899,
+      861
+    ],
+    "redacted": 0
+  },
+  {
+    "id": "21-fund-request-form-empty",
+    "file": "screenshots/21-fund-request-form-empty.png",
+    "title": "Request Additional Funds \u00e2\u20ac\u201d empty",
+    "originalSize": [
+      1903,
+      868
+    ],
+    "redacted": 0
+  },
+  {
+    "id": "22-fund-request-form-filled",
+    "file": "screenshots/22-fund-request-form-filled.png",
+    "title": "Request Additional Funds \u00e2\u20ac\u201d completed",
+    "originalSize": [
+      1897,
+      871
+    ],
+    "redacted": 0
+  },
+  {
+    "id": "23-admin-dashboard-attention",
+    "file": "screenshots/23-admin-dashboard-attention.png",
+    "title": "Administrator dashboard \u00e2\u20ac\u201d needs attention",
+    "originalSize": [
+      1911,
+      873
+    ],
+    "redacted": 0
+  },
+  {
+    "id": "24-financials-pending-request",
+    "file": "screenshots/24-financials-pending-request.png",
+    "title": "Financials \u00e2\u20ac\u201d pending fund request",
+    "originalSize": [
+      1911,
+      868
+    ],
+    "redacted": 0
+  },
+  {
+    "id": "25-financials-after-approval",
+    "file": "screenshots/25-financials-after-approval.png",
+    "title": "Financials \u00e2\u20ac\u201d after approval",
+    "originalSize": [
+      1909,
+      853
+    ],
+    "redacted": 0
+  },
+  {
+    "id": "26-financials-charts-after-approval",
+    "file": "screenshots/26-financials-charts-after-approval.png",
+    "title": "Financials charts \u00e2\u20ac\u201d after approval",
+    "originalSize": [
+      1908,
+      858
+    ],
+    "redacted": 0
+  },
+  {
+    "id": "27-financials-breakdown-after-approval",
+    "file": "screenshots/27-financials-breakdown-after-approval.png",
+    "title": "Per-project breakdown \u00e2\u20ac\u201d after approval",
+    "originalSize": [
+      1906,
+      850
+    ],
+    "redacted": 0
+  }
+]

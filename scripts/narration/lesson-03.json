@@ -1,0 +1,211 @@
+{
+  "id": "lesson-03",
+  "number": 3,
+  "title": "Site Operations, Casual Workers and Daily Reporting",
+  "shortTitle": "Site Operations and Reporting",
+  "theme": "Understanding how field activities are captured and reported.",
+  "accent": "#e67e22",
+  "audience": ["Team leaders", "Administrators", "Board members"],
+  "description": "The team leader's workspace in practice: recording casual workers, preparing and submitting the daily log, and how field reports reach management.",
+  "objectives": [
+    "Use the team leader workspace and project page",
+    "Add, edit and remove casual worker records",
+    "Prepare and submit an accurate daily log",
+    "Explain how submitted reports reach management",
+    "Mark a project complete for administrator approval"
+  ],
+  "scenes": [
+    {
+      "id": "opening",
+      "kind": "opening",
+      "chapter": "Welcome",
+      "topics": ["The team leader workspace", "Adding casual workers", "Submitting daily logs", "How reports reach management"],
+      "beats": [
+        { "text": "Lesson three: site operations, casual workers and daily reporting." },
+        { "text": "This lesson follows the team leader's work in the field: recording the people on site, and reporting each day's activity accurately and on time." }
+      ]
+    },
+    {
+      "id": "workspace",
+      "kind": "screen",
+      "chapter": "The team leader's workspace",
+      "image": "18-team-leader-login",
+      "beats": [
+        { "text": "Team leaders sign in using the Team Leader tab, with the username and password they received by SMS.", "cam": [560, 120, 1350, 760], "hl": [{ "box": [955, 322, 1200, 376], "label": "Team Leader" }, { "box": [709, 405, 1203, 612] }], "cursor": { "to": [956, 660], "click": true }, "sfx": ["login"] },
+        { "text": "They arrive on My Projects: their personal workspace.", "image": "19-team-leader-home", "cam": "full" },
+        { "text": "The four cards show the number of projects assigned to them, the casual workers on their sites, the daily logs they've submitted, and any unread notifications.", "image": "19-team-leader-home", "cam": [350, 120, 1909, 400], "hl": [{ "box": [374, 243, 737, 358], "label": "My Projects" }, { "box": [758, 243, 1121, 358], "label": "My Casuals" }, { "box": [1142, 243, 1505, 358], "label": "Logs Submitted" }, { "box": [1526, 243, 1889, 358], "label": "Unread" }] },
+        { "text": "Below, each assigned project appears as a card, showing its SMP reference, module package, status, number of casual workers and location.", "image": "19-team-leader-home", "cam": [350, 360, 1200, 680], "hl": [{ "box": [374, 454, 1121, 639] }] },
+        { "text": "Selecting a project card opens the project's own page, and the Submit Daily Log button gives quick access to the day's report.", "image": "19-team-leader-home", "cam": [350, 330, 1909, 680], "hl": [{ "box": [374, 454, 1121, 639], "label": "Open project" }, { "box": [1696, 380, 1890, 432], "label": "Submit Daily Log" }] }
+      ]
+    },
+    {
+      "id": "duties",
+      "kind": "diagram",
+      "diagram": "cards",
+      "chapter": "Team leader responsibilities",
+      "data": {
+        "title": "Your responsibilities in the system",
+        "columns": 4,
+        "items": [
+          { "icon": "users", "title": "Accurate worker list", "body": "Keep the casual workers on your projects up to date." },
+          { "icon": "clipboard-list", "title": "Daily log", "body": "Submit a clear log for every working day." },
+          { "icon": "coins", "title": "Justified requests", "body": "Request additional funds only when needed, with a clear reason." },
+          { "icon": "flag-checkered", "title": "Honest completion", "body": "Mark a project complete only when the work is finished." }
+        ]
+      },
+      "beats": [
+        { "text": "As a team leader, you are the organisation's eyes on site, and your responsibilities in the system are clear.", "show": 0 },
+        { "text": "Keep the list of casual workers on your projects accurate.", "show": 1, "focus": 0 },
+        { "text": "Submit a daily log for each working day.", "show": 2, "focus": 1 },
+        { "text": "Request additional funds only when they are needed, with a clear reason.", "show": 3, "focus": 2 },
+        { "text": "And mark the project complete when, and only when, the work is genuinely finished.", "show": 4, "focus": 3 }
+      ]
+    },
+    {
+      "id": "project-page",
+      "kind": "replica",
+      "chapter": "Your project page",
+      "state": { "role": "tl", "page": "project", "tab": "overview", "tl": "Tesh" },
+      "beats": [
+        { "text": "On the project page, a team leader sees a progress indicator and a summary of the team, followed by tabs for Overview, Casuals and Logs.", "cam": "full", "hl": [{ "target": "metrics" }, { "target": "tabs", "label": "Tabs" }] },
+        { "text": "The overview shows the project's details: client, location, region, dates and team leader.", "cam": "full", "hl": [{ "target": "details-card", "label": "Project details" }] },
+        { "text": "When the work is finished, the Mark Complete button sends the project to the administrator for approval. We'll come back to that at the end of this lesson.", "cam": [900, 60, 1920, 520], "hl": [{ "target": "btn-mark-complete", "label": "Mark Complete" }] }
+      ]
+    },
+    {
+      "id": "casual-start",
+      "kind": "replica",
+      "chapter": "Adding casual workers",
+      "state": { "role": "tl", "page": "project", "tab": "casuals", "tl": "Tesh" },
+      "beats": [
+        { "text": "Casual workers are added from My Casuals, or from the Casuals tab of a project. Select Add Casual.", "cam": "full", "hl": [{ "target": "btn-add-casual", "label": "Add Casual" }], "cursor": { "to": "btn-add-casual", "click": true } }
+      ]
+    },
+    {
+      "id": "casual-form",
+      "kind": "screen",
+      "chapter": "Adding casual workers",
+      "image": "20-add-casual-form",
+      "beats": [
+        { "text": "Enter the worker's name and phone number. Both are required. The phone number is used to send the worker an SMS when they're added to the project.", "cam": [520, 90, 1390, 560], "hl": [{ "box": [584, 226, 1328, 316] }, { "box": [584, 338, 1328, 428] }], "type": [{ "box": [584, 255, 1328, 316], "text": "John Otieno" }, { "box": [584, 367, 1328, 428], "text": "+254712345678" }] },
+        { "text": "Role describes the worker's job on site, such as rigger or electrician. Daily Rate is optional, and records the agreed daily rate in Kenyan shillings.", "cam": [520, 300, 1390, 780], "hl": [{ "box": [584, 449, 947, 539], "label": "Role" }, { "box": [964, 449, 1328, 539], "label": "Optional" }], "type": [{ "box": [584, 478, 947, 539], "text": "Rigger" }] },
+        { "text": "Then choose the project. Team leaders can only select the projects assigned to them.", "cam": [520, 300, 1390, 780], "hl": [{ "box": [584, 561, 1328, 651], "label": "Your projects only" }] },
+        { "text": "Select Add. The worker is saved to the project, the action is recorded in the audit log, and SMS messages go to the worker and to the administrator — if those SMS events are switched on.", "cam": [520, 300, 1390, 780], "hl": [{ "box": [974, 679, 1328, 738], "label": "Add" }], "cursor": { "to": [1151, 708], "click": true }, "sfx": ["success", "sms"] }
+      ]
+    },
+    {
+      "id": "casual-manage",
+      "kind": "replica",
+      "chapter": "Managing worker records",
+      "state": { "role": "tl", "page": "project", "tab": "casuals", "tl": "Tesh", "casuals": true },
+      "beats": [
+        { "text": "The worker now appears in the project's casual list, with their phone number, role and status.", "cam": "full", "hl": [{ "target": "casual-row-0", "label": "New worker" }] },
+        { "text": "The edit button lets you correct a worker's details. The delete button removes them: you'll be asked to confirm and re-enter your password, and both the worker and the administrator are informed by SMS.", "cam": [340, 300, 1920, 760], "hl": [{ "target": "btn-casual-edit", "label": "Edit" }, { "target": "btn-casual-delete", "label": "Remove" }], "cursor": { "to": "btn-casual-edit" } },
+        { "text": "Keep this list up to date. The daily log uses it to record who was present on site.", "cam": "full" }
+      ]
+    },
+    {
+      "id": "all-casuals",
+      "kind": "screen",
+      "chapter": "Managing worker records",
+      "image": "13-all-casuals-admin",
+      "beats": [
+        { "text": "Administrators can see every casual worker, across all projects, on the All Casuals page, and search by name, phone or role.", "cam": "full", "hl": [{ "box": [39, 441, 328, 501], "label": "All Casuals" }, { "box": [396, 260, 1866, 320], "label": "Search by name, phone or role" }] }
+      ]
+    },
+    {
+      "id": "log-start",
+      "kind": "screen",
+      "chapter": "Submitting a daily log",
+      "image": "19-team-leader-home",
+      "beats": [
+        { "text": "Now, the most important routine of all: the daily log. Select Submit Daily Log from My Projects, from the Daily Logs page, or from the project's Logs tab.", "cam": [900, 200, 1909, 680], "hl": [{ "box": [1696, 380, 1890, 432], "label": "Submit Daily Log" }], "cursor": { "to": [1793, 406], "click": true } }
+      ]
+    },
+    {
+      "id": "log-form",
+      "kind": "replica",
+      "chapter": "Submitting a daily log",
+      "state": { "role": "tl", "page": "project", "tab": "logs", "tl": "Tesh", "casuals": true, "modal": "daily-log", "checked": [] },
+      "beats": [
+        { "text": "The Submit Daily Log form opens.", "cam": "full" },
+        { "text": "First, select the project. The list shows only your assigned projects, and when you change the project, the list of casual workers updates to match.", "cam": "modal-top", "hl": [{ "target": "dl-project", "label": "Project" }] },
+        { "text": "Next, confirm the date. It defaults to today, but you can choose an earlier date if you're reporting late.", "cam": "modal-top", "hl": [{ "target": "dl-date", "label": "Date" }] },
+        { "text": "Enter the hours worked. The form suggests eight hours, so adjust it to reflect the actual working day.", "cam": "modal-top", "hl": [{ "target": "dl-hours", "label": "Hours Worked" }] },
+        { "text": "In Work Done, describe clearly what was accomplished today. Be specific: what was installed, completed or tested, and where. This field is required.", "cam": "modal-mid", "hl": [{ "target": "dl-work", "label": "Required" }], "type": [{ "target": "dl-work", "text": "Installed and secured the TI cabinet on site. Completed cable routing to the mast base.", "multiline": true }] },
+        { "text": "In Materials Used, list the materials consumed — for example, mast sections, or twenty metres of cable.", "cam": "modal-mid", "hl": [{ "target": "dl-materials", "label": "Materials Used" }], "type": [{ "target": "dl-materials", "text": "Cable 20m, mounting brackets x4" }] },
+        { "text": "Then tick each casual worker who was present on site today.", "cam": "modal-bottom", "hl": [{ "target": "dl-casuals", "label": "Casuals Present" }], "cursor": { "to": "dl-casual-0", "click": true }, "state": { "checked": [0] } },
+        { "text": "Where sites have been linked to a project, they are recorded with the log automatically, so you don't need to enter them separately.", "cam": "full", "callout": { "icon": "tower-cell", "title": "Sites touched", "body": "Recorded automatically from the sites linked to the project — not typed in by the team leader.", "pos": "right" } },
+        { "text": "Select Submit. The log is saved with your name and the time of submission, an entry is written to the audit log, and the administrator receives an in-app notification — and an SMS, if that event is switched on.", "cam": "modal-bottom", "hl": [{ "target": "btn-modal-submit", "label": "Submit" }], "cursor": { "to": "btn-modal-submit", "click": true }, "sfx": ["success"] }
+      ]
+    },
+    {
+      "id": "log-after",
+      "kind": "replica",
+      "chapter": "After submission",
+      "state": { "role": "tl", "page": "logs", "tl": "Tesh", "casuals": true, "logs": true },
+      "beats": [
+        { "text": "Your log now appears on the Daily Logs page, and in the project's Logs tab, showing the date, project, work done, hours, workers present and materials used.", "cam": "full", "hl": [{ "target": "log-card-0", "label": "Submitted log" }], "sfx": ["chime"] },
+        { "text": "Administrators see the same report on their own Daily Logs page, which lists logs from every team leader, most recent first.", "cam": "full" },
+        { "text": "Submitted logs can't be edited in the platform, so take a moment to check your entries before you submit.", "cam": "full", "callout": { "icon": "circle-info", "title": "Check before you submit", "body": "There is no edit option for a submitted daily log.", "pos": "right" } }
+      ]
+    },
+    {
+      "id": "reach",
+      "kind": "diagram",
+      "diagram": "flow",
+      "chapter": "How reports reach management",
+      "data": {
+        "title": "What happens to your daily log",
+        "nodes": [
+          { "icon": "clipboard-list", "title": "Log submitted", "body": "By the team leader, with name and time" },
+          { "icon": "database", "title": "Stored centrally", "body": "Saved in the Firestore database" },
+          { "icon": "bell", "title": "Administrator alerted", "body": "In-app notification, and SMS if enabled" },
+          { "icon": "chart-line", "title": "Visible for oversight", "body": "Daily Logs page, project activity, progress indicator" },
+          { "icon": "building-columns", "title": "Reported upward", "body": "To the Board and project owners" }
+        ]
+      },
+      "beats": [
+        { "text": "Here's what happens to the information you submit.", "show": 1, "focus": 0 },
+        { "text": "Your daily log is stored centrally, in the Firestore database.", "show": 2, "focus": 1, "sfx": ["data"] },
+        { "text": "The administrator is alerted through the notification centre and, where enabled, by SMS.", "show": 3, "focus": 2, "sfx": ["chime"] },
+        { "text": "The log appears on the Daily Logs page and in the project's activity, and it counts toward the project's progress indicator.", "show": 4, "focus": 3 },
+        { "text": "Management can then review field activity for every project in one place, and report it upward to the Board and project owners.", "show": 5, "focus": 4 },
+        { "text": "Remember, though: the system records what authorised users enter. It doesn't independently verify the physical work on site. The value of every report depends on the accuracy and honesty of the person submitting it.", "show": 5, "callout": { "icon": "scale-balanced", "title": "Records, not verification", "body": "The platform stores what is entered. Accuracy is the responsibility of the person submitting.", "pos": "bottom" } }
+      ]
+    },
+    {
+      "id": "complete",
+      "kind": "replica",
+      "chapter": "Completing a project",
+      "state": { "role": "tl", "page": "project", "tab": "overview", "tl": "Tesh", "casuals": true, "logs": true },
+      "beats": [
+        { "text": "When all the work on a project is finished, open the project and select Mark Complete.", "cam": [900, 60, 1920, 520], "hl": [{ "target": "btn-mark-complete", "label": "Mark Complete" }], "cursor": { "to": "btn-mark-complete", "click": true } },
+        { "text": "You can add optional notes, then submit. The project moves to Pending Approval, and the administrator is notified to review it.", "cam": "full", "state": { "modal": "complete" }, "hl": [{ "target": "cp-notes", "label": "Optional notes" }], "sfx": ["chime"] },
+        { "text": "If the administrator sends it back, you'll receive a notification with the reason, and the project returns to active so that you can resolve it.", "cam": "full", "state": { "modal": null } }
+      ]
+    },
+    {
+      "id": "closing",
+      "kind": "closing",
+      "chapter": "Summary",
+      "takeaways": [
+        "Keep your casual worker list accurate",
+        "Submit a clear, specific daily log for every working day",
+        "Mark projects complete only when the work is truly done"
+      ],
+      "next": "Next: Lesson 04 — Financial Management and Budget Intelligence",
+      "beats": [
+        { "text": "To recap: keep your casual worker list accurate, submit a clear daily log for every working day, and mark projects complete only when the work is truly done.", "show": 3 },
+        { "text": "Accurate, timely reports are what allow management and the Board to trust the picture they see.", "show": 3 },
+        { "text": "In the next lesson, we'll look at the financial side of the platform: allocations, expenditure and additional funding.", "show": 3, "next": true }
+      ]
+    },
+    {
+      "id": "credits",
+      "kind": "credits",
+      "chapter": "Credits",
+      "beats": [{ "text": "This training experience was produced by KEYPOLE TECHNOLOGIES." }]
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+{
+  "_comment": "Screenshot inventory in logical training order. 'source' is the original capture in Images/ (kept locally, not committed). 'redact' boxes are [x1, y1, x2, y2] in original pixel space and are pixelated + blurred in the published copy because they contain credentials or personal contact details. 'shift' [dx, dy] aligns before/after captures of the same screen so they crossfade without jitter.",
+  "canvas": {
+    "width": 1920,
+    "height": 880
+  },
+  "screens": [
+    {
+      "id": "01-admin-login",
+      "source": "Screenshot 2026-11-12 232520.png",
+      "title": "Login screen \u00e2\u20ac\u201d Admin tab",
+      "notes": "Admin tab active; username and masked password entered.",
+      "redact": [
+        [
+          716,
+          448,
+          1000,
+          494
+        ]
+      ]
+    },
+    {
+      "id": "02-admin-dashboard",
+      "source": "Screenshot 2026-11-12 232712.png",
+      "title": "Administrator dashboard (Home)",
+      "notes": "Metric cards, Active Projects, Recent Activity. KISUMU_NITA has no team leader yet (TL: -)."
+    },
+    {
+      "id": "03-new-project-form-top",
+      "source": "Screenshot 2026-11-12 232937.png",
+      "title": "New Project form \u00e2\u20ac\u201d upper fields",
+      "notes": "Project Name, SMP, PO Number, Site Module Package, Region, Location, Client, Budget, dates."
+    },
+    {
+      "id": "04-new-project-form-bottom",
+      "source": "Screenshot 2026-11-12 233024.png",
+      "title": "New Project form \u00e2\u20ac\u201d lower fields",
+      "notes": "Team Leader selector, Description, Status, Cancel/Create."
+    },
+    {
+      "id": "05-new-team-leader-form",
+      "source": "Screenshot 2026-11-12 233046.png",
+      "title": "New Team Leader form",
+      "notes": "Full Name, Phone, Email, Username, auto-generated password notice, Assign Projects."
+    },
+    {
+      "id": "06-projects-list",
+      "source": "Screenshot 2026-11-12 233331.png",
+      "title": "Projects portfolio",
+      "notes": "Status filter chips, search box, project card."
+    },
+    {
+      "id": "07-projects-search",
+      "source": "Screenshot 2026-11-12 233144.png",
+      "title": "Projects \u00e2\u20ac\u201d global search",
+      "notes": "Top-bar search 'KIS' filters the Projects view."
+    },
+    {
+      "id": "08-team-leaders",
+      "source": "Screenshot 2026-11-12 233345.png",
+      "title": "Team Leaders directory",
+      "notes": "Cards with contact details, login credentials panel and actions. Credentials, phones and e-mails redacted.",
+      "redact": [
+        [
+          408,
+          448,
+          1012,
+          510
+        ],
+        [
+          1176,
+          448,
+          1782,
+          510
+        ],
+        [
+          400,
+          298,
+          625,
+          346
+        ],
+        [
+          1168,
+          298,
+          1395,
+          346
+        ]
+      ]
+    },
+    {
+      "id": "09-financials-overview",
+      "source": "Screenshot 2026-11-12 233418.png",
+      "title": "Financials \u00e2\u20ac\u201d overview (before request)",
+      "notes": "Total Budget 500,000; Outflow 70,000; Remaining 430,000; Pending 0; Monthly trend; Expense categories."
+    },
+    {
+      "id": "10-financials-charts",
+      "source": "Screenshot 2026-11-12 233431.png",
+      "title": "Financials \u00e2\u20ac\u201d analytics charts",
+      "notes": "Budget vs Outflow per Project; Cumulative Spend; Top Spending Projects; Fund Request Status (empty)."
+    },
+    {
+      "id": "11-financials-breakdown",
+      "source": "Screenshot 2026-11-12 233446.png",
+      "title": "Financials \u00e2\u20ac\u201d per-project breakdown",
+      "notes": "Breakdown table showing 14% used."
+    },
+    {
+      "id": "12-daily-logs-admin",
+      "source": "Screenshot 2026-11-12 233456.png",
+      "title": "Daily Logs \u00e2\u20ac\u201d administrator view",
+      "notes": "Empty state: no daily logs yet."
+    },
+    {
+      "id": "13-all-casuals-admin",
+      "source": "Screenshot 2026-11-12 233819.png",
+      "title": "All Casuals \u00e2\u20ac\u201d administrator view",
+      "notes": "Search by name, phone or role; empty state."
+    },
+    {
+      "id": "14-notifications",
+      "source": "Screenshot 2026-11-12 233832.png",
+      "title": "Notifications centre",
+      "notes": "Fund request and daily log notifications."
+    },
+    {
+      "id": "15-audit-log",
+      "source": "Screenshot 2026-11-12 233913.png",
+      "title": "Audit Log",
+      "notes": "Time, User, Action, Details."
+    },
+    {
+      "id": "16-settings-profile-sms",
+      "source": "Screenshot 2026-11-12 233926.png",
+      "title": "Settings \u00e2\u20ac\u201d profile, Firebase, SMS",
+      "notes": "Phone, Auth UID and Worker URL redacted.",
+      "redact": [
+        [
+          564,
+          362,
+          690,
+          392
+        ],
+        [
+          1626,
+          350,
+          1868,
+          376
+        ],
+        [
+          412,
+          610,
+          925,
+          650
+        ]
+      ]
+    },
+    {
+      "id": "17-settings-sms-events",
+      "source": "Screenshot 2026-11-12 233943.png",
+      "title": "Settings \u00e2\u20ac\u201d SMS auto-fire per event",
+      "notes": "Per-event SMS toggles."
+    },
+    {
+      "id": "18-team-leader-login",
+      "source": "Screenshot 2026-11-12 234750.png",
+      "title": "Login screen \u00e2\u20ac\u201d Team Leader tab",
+      "notes": "Team Leader tab active.",
+      "redact": [
+        [
+          726,
+          448,
+          915,
+          486
+        ]
+      ],
+      "shift": [
+        -4,
+        4
+      ]
+    },
+    {
+      "id": "19-team-leader-home",
+      "source": "Screenshot 2026-11-12 234514.png",
+      "title": "Team Leader workspace (My Projects)",
+      "notes": "Team leader navigation, metric cards, assigned project, Submit Daily Log."
+    },
+    {
+      "id": "20-add-casual-form",
+      "source": "Screenshot 2026-11-12 234533.png",
+      "title": "Add Casual form",
+      "notes": "Name, Phone, Role, Daily Rate (optional), Project."
+    },
+    {
+      "id": "21-fund-request-form-empty",
+      "source": "Screenshot 2026-11-12 234557.png",
+      "title": "Request Additional Funds \u00e2\u20ac\u201d empty",
+      "notes": "Project summary, Amount, Reason."
+    },
+    {
+      "id": "22-fund-request-form-filled",
+      "source": "Screenshot 2026-11-12 234624.png",
+      "title": "Request Additional Funds \u00e2\u20ac\u201d completed",
+      "notes": "KES 50,000; reason entered.",
+      "shift": [
+        4,
+        -5
+      ]
+    },
+    {
+      "id": "23-admin-dashboard-attention",
+      "source": "Screenshot 2026-11-12 234851.png",
+      "title": "Administrator dashboard \u00e2\u20ac\u201d needs attention",
+      "notes": "Attention banner for 1 fund request; Financials badge; notification badge."
+    },
+    {
+      "id": "24-financials-pending-request",
+      "source": "Screenshot 2026-11-12 235139.png",
+      "title": "Financials \u00e2\u20ac\u201d pending fund request",
+      "notes": "Approve / Decline actions; Pending Requests KES 50,000."
+    },
+    {
+      "id": "25-financials-after-approval",
+      "source": "Screenshot 2026-11-12 235224.png",
+      "title": "Financials \u00e2\u20ac\u201d after approval",
+      "notes": "Outflow 120,000; Remaining 380,000; Pending 0.",
+      "shift": [
+        0,
+        10
+      ]
+    },
+    {
+      "id": "26-financials-charts-after-approval",
+      "source": "Screenshot 2026-11-12 235301.png",
+      "title": "Financials charts \u00e2\u20ac\u201d after approval",
+      "notes": "Updated bar charts and fund request status.",
+      "shift": [
+        3,
+        5
+      ]
+    },
+    {
+      "id": "27-financials-breakdown-after-approval",
+      "source": "Screenshot 2026-11-12 235313.png",
+      "title": "Per-project breakdown \u00e2\u20ac\u201d after approval",
+      "notes": "Approved funds KES 50,000; remaining 380,000; 24% used.",
+      "shift": [
+        4,
+        -2
+      ]
+    }
+  ]
+}
